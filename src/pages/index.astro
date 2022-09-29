@@ -1,8 +1,10 @@
 ---
+// use this instead --> https://astro.build/integrations/
 import Layout from '../layouts/Layout.astro';
 import { Client } from '@notionhq/client';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import Footer from '../components/Footer.astro';
+import { Img } from 'astro-imagetools/components';
 
 const notion = new Client({ auth: import.meta.env.NOTION_API_KEY });
 
@@ -23,7 +25,7 @@ const images = response.results
   .filter((title): title is RichTextItemResponse => !!title)
   .map((title) => {
     const separator = 'https://';
-    const [label, href] = title.plain_text.split(separator);
+    const [label = '', href] = title.plain_text.split(separator);
 
     return { label, href: `${separator}${href}` };
   });
@@ -60,12 +62,14 @@ const images = response.results
                 data-pswp-height="2500"
                 class=" group h-72 md:h-96 flex justify-end items-end bg-gray-100 overflow-hidden rounded-xl shadow-lg relative gallery-item hover:shadow-xl"
               >
-                <img
-                  src={image.href}
-                  loading="lazy"
-                  alt={image.label}
-                  class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
-                />
+                <div class="w-full h-full flex object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200">
+                  <Img
+                    src={image.href}
+                    alt={image.label}
+                    placeholder="dominantColor"
+                    width={400}
+                  />
+                </div>
 
                 <div class="bg-gradient-to-t from-black via-transparent to-transparent opacity-20 absolute inset-0 pointer-events-none group-hover:opacity-0 transition duration-200" />
 
