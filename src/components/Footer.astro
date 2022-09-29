@@ -1,0 +1,36 @@
+---
+import { ROUTES, SOCIAL } from '../consts';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="flex flex-col items-center mt-12 gap-4 mb-4">
+    <nav
+      class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 md:gap-6"
+    >
+      {ROUTES.map((route) => <a href={route.href}>{route.label}</a>)}
+    </nav>
+
+    <div class="flex gap-4">
+      {
+        SOCIAL.map((social) => (
+          <a href={social.href} target="_blank">
+            <Icon icon={social.icon} />
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="text-gray-400 text-sm text-center">
+      © {year} - Ema Suriano
+    </div>
+  </div>
+</footer>
+
+<style>
+  a {
+    @apply text-gray-400 hover:text-gray-500 active:text-gray-600 transition-colors;
+  }
+</style>

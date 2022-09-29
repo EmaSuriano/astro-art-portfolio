@@ -15,9 +15,10 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-slate-50 dark:bg-slate-800">
     <slot />
-    <link href="/lightbox/lightbox.min.css" rel="stylesheet" />
-    <script is:inline src="/lightbox/lightbox.min.js"></script>
+    <script>
+      import '../load-gallery.js';
+    </script>
   </body>
 </html>
