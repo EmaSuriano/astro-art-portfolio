@@ -1,4 +1,4 @@
-# Welcome to [Astro](https://astro.build)
+# astro-art-portfolio
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8d66fa66-0596-4ae2-97ef-bef6134b2681/deploy-status)](https://app.netlify.com/sites/art-porfolio-emasuriano/deploys)
 
