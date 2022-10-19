@@ -3,24 +3,29 @@
 import { Img } from 'astro-imagetools/components';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+import { PERSONAL_INFO } from '../consts';
+
+const { role, name, avatar, contact, about } = PERSONAL_INFO;
+
+const title = `${name} - About`;
 ---
 
-<Layout title="Ema Suriano's Art">
+<Layout title={title}>
   <div class="py-4 sm:py-6 lg:py-8 flex flex-col justify-between h-screen">
-    <main class="mb-auto">
+    <main class="mb-auto align-middle flex flex-col items-center">
       <div class="my-8 sm:my-12">
         <h2
-          class="text-gray-800 dark:text-white text-2xl lg:text-3xl text-center mb-4 md:mb-6 md:text-base font-semibold"
+          class="text-gray-800 dark:text-white text-2xl lg:text-3xl text-center mb-4 md:mb-6 font-semibold"
         >
           About me
         </h2>
       </div>
 
       <div
-        class="bg-white dark:bg-black py-6 sm:py-8 lg:py-12 w-fit mx-auto rounded-xl"
+        class="bg-white dark:bg-slate-900 py-2 sm:py-4 lg:py-8 w-fit mx-4 rounded-xl"
       >
         <div class="max-w-screen-lg px-4 md:px-8">
-          <div class="grid sm:grid-cols-2 gap-8">
+          <div class="grid sm:grid-cols-2 gap-8 items-center">
             <!-- content - start -->
             <div
               class="flex flex-col justify-center items-center sm:items-start md:py-24 lg:py-32"
@@ -28,44 +33,36 @@ import Footer from '../components/Footer.astro';
               <p
                 class="text-indigo-500 text-sm md:text-base font-semibold uppercase mb-4"
               >
-                Digital Artist
+                {role}
               </p>
               <h1
-                class="text-gray-800 text-2xl md:text-3xl font-bold text-center sm:text-left mb-4"
+                class="text-gray-800 dark:text-gray-200 text-2xl md:text-3xl font-bold text-center sm:text-left mb-4"
               >
-                Ema Suriano
+                {name}
               </h1>
 
-              <p class="text-gray-500 md:text-lg text-center sm:text-left mb-8">
-                During the day I am Software Engineer, but at night I switched
-                into my Artistic side.
-
-                <br />
-
-                Most of my creations are made with
-                <a href="https://www.midjourney.com">Mid journey</a>, and later
-                on improved using Photoshop.
-              </p>
+              {
+                about
+                  .split('.')
+                  .map((text) => (
+                    <p class="text-gray-500 md:text-lg text-center sm:text-left mb-8">
+                      {text}
+                    </p>
+                  ))
+              }
 
               <a
-                href="mailto:emanuel.suriano@gmail.com"
+                href={contact}
                 class="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
                 >Contact</a
               >
             </div>
-            <!-- content - end -->
 
-            <!-- image - start -->
             <div
-              class="h-80 md:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg relative"
+              class="h-fit bg-gray-100 max-w-md sm:max-w-lg mx-auto overflow-hidden shadow-lg rounded-lg relative object-cover object-center"
             >
-              <Img
-                src="https://cdn.discordapp.com/attachments/1023544104698773564/1025325255843127386/Ema_portrait_of_a_young_men_with_snowy_mountains_at_the_backgro_9c3a800b-294c-481b-8c57-0c84ba46ba08.png"
-                alt="Portrait"
-                width={600}
-              />
+              <Img src={avatar} alt="Portrait" width={600} />
             </div>
-            <!-- image - end -->
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import { Client } from '@notionhq/client';
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import Footer from '../components/Footer.astro';
+import { PERSONAL_INFO } from '../consts';
 
 const notion = new Client({ auth: import.meta.env.NOTION_API_KEY });
 
@@ -29,22 +30,24 @@ const images = response.results
 
     return { label, href: `${separator}${href}` };
   });
+
+const { title, subtitle } = PERSONAL_INFO;
 ---
 
-<Layout title="Ema Suriano's Art">
+<Layout title={title}>
   <div class="py-4 sm:py-6 lg:py-8 flex flex-col justify-between h-screen">
     <main class="mb-auto">
       <div class="my-8 sm:my-12">
         <h2
-          class="text-gray-800 dark:text-white text-2xl lg:text-3xl text-center mb-4 md:mb-6 md:text-base font-semibold"
+          class="text-gray-800 dark:text-white text-2xl lg:text-3xl text-center mb-4 md:mb-6 font-semibold"
         >
-          Ema Suriano's Art
+          {title}
         </h2>
 
         <p
           class="max-w-screen-md dark:text-slate-400 text-gray-500 md:text-lg text-center mx-auto"
         >
-          A collection of my best work in one place
+          {subtitle}
         </p>
       </div>
 
