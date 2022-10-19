@@ -1,0 +1,24 @@
+name: Pr Checker
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn build
+        env:
+          ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+          SPACE_ID: ${{secrets.SPACE_ID}}
