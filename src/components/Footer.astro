@@ -1,8 +1,9 @@
 ---
-import { ROUTES, SOCIAL } from '../consts';
+import { ROUTES, SOCIAL, PERSONAL_INFO } from '../consts';
 import Icon from './Icon.astro';
 
 const year = new Date().getFullYear();
+const { name } = PERSONAL_INFO;
 ---
 
 <footer>
@@ -24,7 +25,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="text-gray-400 text-sm text-center">
-      © {year} - Ema Suriano
+      © {year} - {name}
     </div>
   </div>
 </footer>

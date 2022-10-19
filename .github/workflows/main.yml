@@ -1,9 +1,9 @@
-name: Master
+name: Main
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -20,5 +20,5 @@ jobs:
 
       - run: yarn build
         env:
-          ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-          SPACE_ID: ${{secrets.SPACE_ID}}
+          NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
+          DATABASE_ID: ${{secrets.DATABASE_ID}}
