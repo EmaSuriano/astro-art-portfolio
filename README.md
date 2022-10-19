@@ -1,7 +1,7 @@
 # astro-art-portfolio
 
 [![Main](https://github.com/EmaSuriano/astro-art-portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/EmaSuriano/astro-art-portfolio/actions/workflows/main.yml)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8d66fa66-0596-4ae2-97ef-bef6134b2681/deploy-status)](https://app.netlify.com/sites/art-porfolio-emasuriano/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8d66fa66-0596-4ae2-97ef-bef6134b2681/deploy-status)](https://app.netlify.com/sites/astro-art-portfolio/deploys)
 
 > Art portfolio built with Astro and using Notion API.
 
