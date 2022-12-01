@@ -15,7 +15,7 @@
     "@notionhq/client": "^2.2.2",
     "astro": "^1.6.12",
     "astro-imagetools": "^0.6.11",
-    "photoswipe": "^5.3.3",
+    "photoswipe": "^5.3.4",
     "tailwindcss": "^3.2.4",
     "@types/probe-image-size": "^7.2.0",
     "prettier": "^2.7.1",
