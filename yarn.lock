@@ -1041,10 +1041,10 @@ ast-types@0.14.2:
   dependencies:
     tslib "^2.0.1"
 
-astro-imagetools@^0.6.11:
-  version "0.6.11"
-  resolved "https://registry.yarnpkg.com/astro-imagetools/-/astro-imagetools-0.6.11.tgz#77ccdf93bd11076a91877d91e79f303f88a666ce"
-  integrity sha512-ItRT1RwvWrBwvh7MmQ5Ue38D8/dm55Im6LXSGmwQtjWhnZU3wV8AvRGJ1G6uKIhsu2lkiIcombkjKGZnbVDMtQ==
+astro-imagetools@^0.6.15:
+  version "0.6.15"
+  resolved "https://registry.yarnpkg.com/astro-imagetools/-/astro-imagetools-0.6.15.tgz#42e99843a5f7554affbe838a4a2af333afbff213"
+  integrity sha512-38HNwRknku5MpE9tTK0aTNQwvU98Vh24E73GVaRiK5Mp4ZGTwzXhYHpCFJCUn+2di6jRU0SYQb9am0eVnDYIeA==
   dependencies:
     "@astropub/codecs" "0.4.4"
     file-type "17.1.1"
