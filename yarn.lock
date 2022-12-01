@@ -10,25 +10,20 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@astrojs/compiler@^0.23.4":
-  version "0.23.5"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.23.5.tgz#ea57a2b994b2930e3b3d2d524f10866698fef4f1"
-  integrity sha512-vBMPy9ok4iLapSyCCT1qsZ9dK7LkVFl9mObtLEmWiec9myGHS9h2kQY2xzPeFNJiWXUf9O6tSyQpQTy5As/p3g==
+"@astrojs/compiler@^0.29.15", "@astrojs/compiler@^0.29.3":
+  version "0.29.17"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.29.17.tgz#5c65e18fd5dde9620dcc1794a858609b66408215"
+  integrity sha512-6ZbRGVunUMHxROD9Cleqkrfrj/kM9o43nLVwycdxCexCB5G372evy2ZM46LhaG/k5B5yC0PByNHTaGny0ll3iQ==
 
-"@astrojs/compiler@^0.29.3", "@astrojs/compiler@^0.29.5":
-  version "0.29.8"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.29.8.tgz#48b85872a15752ac3a482047ef6e51cf0e2d76c2"
-  integrity sha512-D4qKnSQcOF32LgskeGnzq35N30yrITgrSaQrt/EIPU6ItcgcUr/K1BG07JCZdc+4mbfWF6RFQc7yPP9pS8Sg8w==
-
-"@astrojs/language-server@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-0.26.2.tgz#0e685f2e1d76d06f682d9d0f93a9b35f0b5c23d8"
-  integrity sha512-9nkfdd6CMXLDIJojnwbYu5XrYfOI+g63JlktOlpFCwFjFNpm1u0e/+pXXmj6Zs+PkSTo0kV1UM77dRKRS5OC1Q==
+"@astrojs/language-server@^0.28.3":
+  version "0.28.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-0.28.3.tgz#968472b0e8876bb7583230c745b0f0646a09d510"
+  integrity sha512-fPovAX/X46eE2w03jNRMpQ7W9m2mAvNt4Ay65lD9wl1Z5vIQYxlg7Enp9qP225muTr4jSVB5QiLumFJmZMAaVA==
   dependencies:
     "@vscode/emmet-helper" "^2.8.4"
     events "^3.3.0"
     prettier "^2.7.1"
-    prettier-plugin-astro "^0.5.3"
+    prettier-plugin-astro "^0.7.0"
     source-map "^0.7.3"
     vscode-css-languageservice "^6.0.1"
     vscode-html-languageservice "^5.0.0"
@@ -740,7 +735,7 @@
     "@types/node-fetch" "^2.5.10"
     node-fetch "^2.6.1"
 
-"@pkgr/utils@^2.3.0", "@pkgr/utils@^2.3.1":
+"@pkgr/utils@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-2.3.1.tgz#0a9b06ffddee364d6642b3cd562ca76f55b34a03"
   integrity sha512-wfzX8kc1PMyUILA+1Z/EqoE4UCXGy0iRGMhPwdfae1+f0OXlLqCk+By+aMzgJBzR9AzS4CDizioG6Ss1gvAFJw==
@@ -1060,13 +1055,13 @@ astro-imagetools@^0.6.11:
   optionalDependencies:
     imagetools-core "3.0.2"
 
-astro@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-1.6.2.tgz#85b03201ba6a1cd1476ac4f7849dc450692e4e76"
-  integrity sha512-UHbzQ3Q7iU2a0XBY6Dzh/Hksoa7svmkWZ3ABRGgSOT765GXIGZkErgeNAsjsBW7RsTUKVLqVxD2LK3NzZL5EKA==
+astro@^1.6.12:
+  version "1.6.12"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-1.6.12.tgz#f56a22d76338d43107b55ee8e84a608b16ff91c9"
+  integrity sha512-Pa1BfD/w2B/1bi6UXyvwbSnKnZqBglWgw8vjuEP+YJ8tb63g2yAn4mOy2Fh/Z5jn6fV1mkA2HS2TN2ZpTgagdg==
   dependencies:
-    "@astrojs/compiler" "^0.29.5"
-    "@astrojs/language-server" "^0.26.2"
+    "@astrojs/compiler" "^0.29.15"
+    "@astrojs/language-server" "^0.28.3"
     "@astrojs/markdown-remark" "^1.1.3"
     "@astrojs/telemetry" "^1.0.1"
     "@astrojs/webapi" "^1.1.1"
@@ -1088,7 +1083,6 @@ astro@^1.6.2:
     debug "^4.3.4"
     deepmerge-ts "^4.2.2"
     diff "^5.1.0"
-    eol "^0.9.1"
     es-module-lexer "^0.10.5"
     esbuild "^0.14.43"
     execa "^6.1.0"
@@ -1123,8 +1117,8 @@ astro@^1.6.2:
     typescript "*"
     unist-util-visit "^4.1.0"
     vfile "^5.3.2"
-    vite "~3.2.1"
-    vitefu "^0.1.0"
+    vite "~3.2.4"
+    vitefu "^0.2.1"
     yargs-parser "^21.0.1"
     zod "^3.17.3"
 
@@ -1610,11 +1604,6 @@ end-of-stream@^1.1.0, end-of-stream@^1.4.1:
   integrity sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==
   dependencies:
     once "^1.4.0"
-
-eol@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/eol/-/eol-0.9.1.tgz#f701912f504074be35c6117a5c4ade49cd547acd"
-  integrity sha512-Ds/TEoZjwggRoz/Q2O7SE3i4Jm66mqTDfmdHdq/7DKVk3bro9Q8h6WdXKdPqFLMoqxrDK5SVRzHVPOS6uuGtrg==
 
 es-module-lexer@^0.10.5:
   version "0.10.5"
@@ -3693,16 +3682,6 @@ preferred-pm@^3.0.3:
     path-exists "^4.0.0"
     which-pm "2.0.0"
 
-prettier-plugin-astro@^0.5.3:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.5.4.tgz#0ccc510cdd260baf6346ccaf5956fb63d0b2bbd9"
-  integrity sha512-ILs/WgUYtKBOn3Zh217/PwjCFtUWEKQjcCFJDevri0hGEBwEnnda9aqSLL0/nhCOmQn/UE7M9zLQvThu970ZHw==
-  dependencies:
-    "@astrojs/compiler" "^0.23.4"
-    prettier "^2.7.1"
-    sass-formatter "^0.7.5"
-    synckit "^0.7.0"
-
 prettier-plugin-astro@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.7.0.tgz#e6dcd5fe1750bd87343123d86ea5f1dcd5038426"
@@ -4299,14 +4278,6 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-synckit@^0.7.0:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.7.3.tgz#99d4c1d09aaf03514801ff719b9c2bd80914a64d"
-  integrity sha512-jNroMv7Juy+mJ/CHW5H6TzsLWpa1qck6sCHbkv8YTur+irSq2PjbvmGnm2gy14BUQ6jF33vyR4DPssHqmqsDQw==
-  dependencies:
-    "@pkgr/utils" "^2.3.0"
-    tslib "^2.4.0"
-
 synckit@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.8.4.tgz#0e6b392b73fafdafcde56692e3352500261d64ec"
@@ -4625,10 +4596,10 @@ vfile@^5.0.0, vfile@^5.3.2:
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
 
-vite@~3.2.1:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-3.2.2.tgz#280762bfaf47bcea1d12698427331c0009ac7c1f"
-  integrity sha512-pLrhatFFOWO9kS19bQ658CnRYzv0WLbsPih6R+iFeEEhDOuYgYCX2rztUViMz/uy/V8cLCJvLFeiOK7RJEzHcw==
+vite@~3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-3.2.4.tgz#d8c7892dd4268064e04fffbe7d866207dd24166e"
+  integrity sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==
   dependencies:
     esbuild "^0.15.9"
     postcss "^8.4.18"
@@ -4637,10 +4608,10 @@ vite@~3.2.1:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitefu@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-0.1.1.tgz#d12f2d6650c618cc3dfd9f3b331b3b6923bbe364"
-  integrity sha512-HClD14fjMJ+NQgXBqT3dC3RdO/+Chayil+cCPYZKY3kT+KcJomKzrdgzfCHJkIL2L0OAY+VPvrSW615iPtc7ag==
+vitefu@^0.2.1:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-0.2.2.tgz#d03215f351a1fd65f6c277d546f2d30956b970f9"
+  integrity sha512-8CKEIWPm4B4DUDN+h+hVJa9pyNi7rzc5MYmbxhs1wcMakueGFNWB5/DL30USm9qU3xUPnL4/rrLEAwwFiD1tag==
 
 vscode-css-languageservice@^6.0.1:
   version "6.1.1"
