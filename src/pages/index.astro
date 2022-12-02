@@ -1,5 +1,4 @@
 ---
-// @ts-expect-error wrong import here ...
 import { Img } from 'astro-imagetools/components';
 import probe from 'probe-image-size';
 import Layout from '../layouts/Layout.astro';
@@ -58,6 +57,8 @@ const images = await Promise.all(
                   <Img
                     src={image.href}
                     alt={image.label}
+                    loading="lazy"
+                    preload="webp"
                     width={image.size.width / 3}
                   />
                 </div>
