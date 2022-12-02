@@ -39,3 +39,12 @@ export const PERSONAL_INFO = {
   about:
     'During the day I am Software Engineer, but at night I switched into my Artistic side. Most of my creations are made with Mid Journey (AI generation), and later on improved using Adobe Photoshop.',
 } as const;
+
+export const SEO_INFO = [
+  {
+    name: 'description',
+    content: 'Art portfolio made by Ema Suriano in his free time',
+  },
+  { name: 'keywords', content: 'Art portfolio, Digital art, gallery' },
+  { name: 'author', content: PERSONAL_INFO.name },
+];
