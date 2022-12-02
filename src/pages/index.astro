@@ -57,8 +57,7 @@ const images = await Promise.all(
                   <Img
                     src={image.href}
                     alt={image.label}
-                    loading="lazy"
-                    preload="webp"
+                    format="webp"
                     width={image.size.width / 3}
                   />
                 </div>

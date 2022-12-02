@@ -1,9 +1,10 @@
 ---
 import { ROUTES, SOCIAL, PERSONAL_INFO } from '../consts';
-import Icon from './Icon.astro';
+import { Icon } from 'astro-icon';
+
+const { pathname } = Astro.url;
 
 const year = new Date().getFullYear();
-const { name } = PERSONAL_INFO;
 ---
 
 <footer>
@@ -11,21 +12,32 @@ const { name } = PERSONAL_INFO;
     <nav
       class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 md:gap-6"
     >
-      {ROUTES.map((route) => <a href={route.href}>{route.label}</a>)}
+      {
+        ROUTES.filter((route) => route.href !== pathname).map((route) => (
+          <a href={route.href}>{route.label}</a>
+        ))
+      }
     </nav>
 
     <div class="flex gap-4">
       {
         SOCIAL.map((social) => (
           <a href={social.href} target="_blank">
-            <Icon icon={social.icon} />
+            <Icon
+              name={social.icon}
+              aria-label={social.label}
+              class="w-5 h-5"
+              fill="currentColor"
+              width="24"
+              height="24"
+            />
           </a>
         ))
       }
     </div>
 
     <div class="text-gray-500 text-sm text-center">
-      © {year} - {name}
+      © {year} - {PERSONAL_INFO.name}
     </div>
   </div>
 </footer>

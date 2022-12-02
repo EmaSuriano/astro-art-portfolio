@@ -9,14 +9,22 @@ export const ROUTES = [
   },
 ] as const;
 
+// Icons from https://icon-sets.iconify.design
 export const SOCIAL = [
   {
+    label: 'Twitter',
     href: 'https://twitter.com/EmaSuriano',
-    icon: 'twitter',
+    icon: 'mdi:twitter',
   },
   {
+    label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/emanuel-suriano/',
-    icon: 'linkedIn',
+    icon: 'mdi:linkedin',
+  },
+  {
+    label: 'Website',
+    href: 'https://emasuriano.com',
+    icon: 'mdi:web',
   },
 ] as const;
 
