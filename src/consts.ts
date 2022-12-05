@@ -35,7 +35,7 @@ export const PERSONAL_INFO = {
   role: 'Digital Artist',
   contact: 'mailto:emanuel.suriano@gmail.com',
   avatar:
-    'https://cdn.discordapp.com/attachments/1023544104698773564/1025325255843127386/Ema_portrait_of_a_young_men_with_snowy_mountains_at_the_backgro_9c3a800b-294c-481b-8c57-0c84ba46ba08.png',
+    'https://cdn.discordapp.com/attachments/1023544104698773564/1049350422290251847/Ema_portrait_of_a_young_man_with_background_of_snow_mountains_i_f1762cd5-f4f3-4107-839c-194dab4dffa7.png',
   about:
     'During the day I am Software Engineer, but at night I switched into my Artistic side. Most of my creations are made with Mid Journey (AI generation), and later on improved using Adobe Photoshop.',
 } as const;
