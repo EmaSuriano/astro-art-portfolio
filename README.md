@@ -35,16 +35,25 @@
 
 ## Setup 📦
 
-Create a new notion page similar to [this one](https://emasuriano.notion.site/93337e86f87a4a89b0553a05f512df2b?v=21134437da6f4e22bf36bdda167295cc).
-
-Create an `.env` file at the root level and define the following variables:
+* Duplicate the following [notion page](https://www.notion.so/emasuriano/dec82b99ec35407b830fa219863511be?v=54eba236190b4911b58cbdbb328244c1)
+* Replace the default values with your pictures and labels. The images are created based on: [label] [link].
+* Clone repository, and create an `.env` file at the root level and define the following variables:
 
 ```plain
 NOTION_API_KEY=
 DATABASE_ID=
 ```
+* You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
 
-You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
+## Automate deploy of website 🚀 (Optional)
+
+Given that this project is a static website, you are force to trigger a deploy in order to reflect the latest changes inside our Notion database. This process can be easily automatized using many of the existing providers out there. 
+
+In my case, I'm currently using [Zapier](https://zapier.com/) due to it provides compability with many services, and in this case with the ones that I need: [Notion](https://zapier.com/apps/notion/integrations) and [Netlify](https://zapier.com/apps/netlify/integrations).
+
+Create an account and later create a new zap. You can use mine as an example:
+
+![Zapier template](https://user-images.githubusercontent.com/3399429/207274121-c4ed214e-f45a-47aa-ab36-1b8a0f809b76.png)
 
 ## Commands 🧞
 
