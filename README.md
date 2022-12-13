@@ -49,9 +49,7 @@ DATABASE_ID=
 
 Given that this project is a static website, you are force to trigger a deploy in order to reflect the latest changes inside our Notion database. This process can be easily automatized using many of the existing providers out there. 
 
-In my case, I'm currently using [Zapier](https://zapier.com/) due to it provides compability with many services, and in this case with the ones that I need: [Notion](https://zapier.com/apps/notion/integrations) and [Netlify](https://zapier.com/apps/netlify/integrations).
-
-Create an account and later create a new zap. You can use mine as an example:
+In my case, I'm currently using [Zapier](https://zapier.com/) due to it provides compability with many services, and in this case with the ones that I need: [Notion](https://zapier.com/apps/notion/integrations) and [Netlify](https://zapier.com/apps/netlify/integrations). I created a [shared zap](https://zapier.com/shared/43559f7a74ff7d4aacb4befe8aa20f5acb88c628) that anyone can start using now!
 
 ![Zapier template](https://user-images.githubusercontent.com/3399429/207274121-c4ed214e-f45a-47aa-ab36-1b8a0f809b76.png)
 
