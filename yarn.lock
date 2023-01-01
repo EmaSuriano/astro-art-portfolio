@@ -752,10 +752,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@notionhq/client@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-2.2.2.tgz#621eab5788fd1aca67d53454871bbf4122e651ba"
-  integrity sha512-L7TB+UyhnWTSv1ek7xzGr9+mS9o76qMKnZ8Ag8H2q6QgvywAiPOFcE3ulWI/1AnMewGVRqwb30agPHMVRY/K/w==
+"@notionhq/client@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-2.2.3.tgz#b8563994fd116123b0b2e39fca43a593faaf8360"
+  integrity sha512-ZqUzY0iRg/LIrwS+wzz/6osSB2nxIpmqdAtdUwzpcimc9Jlu1j85FeYdaU26Shr193CFrl2TLFeKqpk/APRQ4g==
   dependencies:
     "@types/node-fetch" "^2.5.10"
     node-fetch "^2.6.1"
@@ -3624,19 +3624,10 @@ node-fetch@^2.6.1:
   dependencies:
     whatwg-url "^5.0.0"
 
-node-fetch@^3.1.0:
+node-fetch@^3.1.0, node-fetch@^3.2.5:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.3.0.tgz#37e71db4ecc257057af828d523a7243d651d91e4"
   integrity sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==
-  dependencies:
-    data-uri-to-buffer "^4.0.0"
-    fetch-blob "^3.1.4"
-    formdata-polyfill "^4.0.10"
-
-node-fetch@^3.2.5:
-  version "3.2.10"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.2.10.tgz#e8347f94b54ae18b57c9c049ef641cef398a85c8"
-  integrity sha512-MhuzNwdURnZ1Cp4XTazr69K0BTizsBroX7Zx3UgDSVcZYKF/6p0CBe4EUb/hLqmzVhl0UpYfgRljQ4yxE+iCxA==
   dependencies:
     data-uri-to-buffer "^4.0.0"
     fetch-blob "^3.1.4"
