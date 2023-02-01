@@ -17,7 +17,7 @@
     "astro": "^1.6.12",
     "astro-icon": "^0.8.0",
     "astro-imagetools": "^0.6.15",
-    "photoswipe": "^5.3.4",
+    "photoswipe": "^5.3.5",
     "prettier": "^2.8.0",
     "prettier-plugin-astro": "^0.7.0",
     "probe-image-size": "^7.2.3",
