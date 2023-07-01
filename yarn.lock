@@ -1103,10 +1103,10 @@ astro-compress@^1.1.15:
   dependencies:
     "@nikolarhristov/pipeline" "0.0.10"
 
-astro-icon@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/astro-icon/-/astro-icon-0.8.0.tgz#f5fb224b094e457f76ff6bf72d8e01dbfed6b180"
-  integrity sha512-sCzhZcl46BIyLJVg89hq5J4uQABn2psmGvK4cUaxib+M/kBI3TrPy1w3g2O5h/WcrTHLVN9LyxjgkD4lEJJFpw==
+astro-icon@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/astro-icon/-/astro-icon-0.8.1.tgz#2259640cea3818326957dfba66ae17aa43f1d3cb"
+  integrity sha512-APk+fbFnoyGdIVSPFrdrOW9YBK96/1fYuVe7ULTGW92+z00RKB8GfLJiUvzNVXUAX2rZJCFmruGVF4rrhcTYsg==
   dependencies:
     node-fetch "^3.1.0"
     resolve-pkg "^2.0.0"
