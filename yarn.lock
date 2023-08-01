@@ -3959,10 +3959,10 @@ phin@^2.9.1:
   resolved "https://registry.yarnpkg.com/phin/-/phin-2.9.3.tgz#f9b6ac10a035636fb65dfc576aaaa17b8743125c"
   integrity sha512-CzFr90qM24ju5f88quFC/6qohjC144rehe5n6DH900lgXmUe86+xCKc10ev56gRKC4/BkHUoG4uSiQgBiIXwDA==
 
-photoswipe@^5.3.7:
-  version "5.3.7"
-  resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-5.3.7.tgz#c67df67aaddb5705bcf8ff265bd2086f57805756"
-  integrity sha512-zsyLsTTLFrj0XR1m4/hO7qNooboFKUrDy+Zt5i2d6qjFPAtBjzaj/Xtydso4uxzcXpcqbTmyxDibb3BcSISseg==
+photoswipe@^5.3.8:
+  version "5.3.8"
+  resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-5.3.8.tgz#bea7db18e79383833f85c005b833da2029f0daee"
+  integrity sha512-4vTzOQt8GP4Chsm0s+8j2xDtVHAEN252PxrU12A1zXauNn0zD5HRHgjALKO2GKTyBnTnOrJUOxbV8LTrFIMrYw==
 
 picocolors@^1.0.0:
   version "1.0.0"
