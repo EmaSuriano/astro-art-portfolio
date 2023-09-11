@@ -37,14 +37,17 @@
 ## Setup 📦
 
 * Duplicate the following [notion page](https://www.notion.so/emasuriano/dec82b99ec35407b830fa219863511be?v=54eba236190b4911b58cbdbb328244c1)
-* Replace the default values with your pictures and labels. The images are created based on: [label] [link].
+* Replace the default values with your pictures and labels. Replace the elements of the list with the links to your photos, one per line.
 * Clone repository, and create an `.env` file at the root level and define the following variables:
 
 ```plain
 NOTION_API_KEY=
 DATABASE_ID=
 ```
-* You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
+* `NOTION_API_KEY` is the secret key for your [integration](https://www.notion.so/my-integrations). 
+* `DATABASE_ID` is the id of your page, e.g. `dec82b99ec35407b830fa219863511be` for the page you cloned.
+  * See also [official Notion documentation on databases](https://developers.notion.com/reference/database). 
+* Don't forget to [add the permissions for your integration to access the page](https://www.notion.so/help/add-and-manage-connections-with-the-api#add-connections-to-pages)
 
 ## Automate deploy of website 🚀 (Optional)
 
