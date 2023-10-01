@@ -961,10 +961,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-6.0.3.tgz#705bb349e789efa06f43f128cef51240753424cb"
   integrity sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==
 
-"@types/probe-image-size@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@types/probe-image-size/-/probe-image-size-7.2.0.tgz#1c718b9469dc83ccd8eba09b7a6fd0ff6a38cf53"
-  integrity sha512-R5H3vw62gHNHrn+JGZbKejb+Z2D/6E5UNVlhCzIaBBLroMQMOFqy5Pap2gM+ZZHdqBtVU0/cx/M6to+mOJcoew==
+"@types/probe-image-size@^7.2.1":
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/@types/probe-image-size/-/probe-image-size-7.2.1.tgz#16877ef0dce69513b252dc8bae137f436d256890"
+  integrity sha512-TrcjYgMlJbzUWs8XW2TrgxJ4yzJucRQcCQdE3jGUOFBGbDlvdumiQdxNgZ8saofLWiuEXRZUjY1z1ZkeWNq52A==
   dependencies:
     "@types/needle" "*"
     "@types/node" "*"
