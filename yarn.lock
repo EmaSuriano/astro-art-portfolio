@@ -1112,10 +1112,10 @@ astro-icon@^0.8.1:
     resolve-pkg "^2.0.0"
     svgo "^2.8.0"
 
-astro-imagetools@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/astro-imagetools/-/astro-imagetools-0.8.1.tgz#0f89f8b004f0377fb56f6d8ec9f72ad145e7e3f2"
-  integrity sha512-2E737IBqzuwkuK4FMYB9UmE1xmQWghn1HOHNMERrzZmGsKpGSAdQGo7nSnYwpy8amF+Do8sUx9wtCe2+6T4k+A==
+astro-imagetools@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/astro-imagetools/-/astro-imagetools-0.9.0.tgz#dcea6bdb67d26ab47ecf5344ef09cc5a5ddde74a"
+  integrity sha512-iZCSiUbFr0h8HSyX2Fl/hzc3RlmVjNstWwsZZSyQKW9vRmMny/bd3qL3p8wuC6ISsAvtHfVnJLmorhhRhwVOcw==
   dependencies:
     "@astropub/codecs" "0.4.4"
     file-type "17.1.1"
