@@ -22,31 +22,3 @@ jobs:
         env:
           NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
           DATABASE_ID: ${{secrets.DATABASE_ID}}
-
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: |
-            https://art.emasuriano.com
-          uploadArtifacts: true
-
-  screenshots:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: install puppeteer-headful
-        uses: mujo-code/puppeteer-headful@master # Required for headful puppeteer
-        env:
-          CI: 'true'
-      - name: screenshots-ci-action
-        uses: flameddd/screenshots-ci-action@master
-        with:
-          url: https://art.emasuriano.com
-      - uses: actions/upload-artifact@v2 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
-        with:
-          path: screenshots
-          name: Download-screenshots
