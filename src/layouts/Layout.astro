@@ -1,12 +1,12 @@
 ---
-import { SEO_INFO } from '../consts';
+import { SEO_INFO } from "../consts";
 
 type Props = { title: string };
 
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +19,7 @@ const { title } = Astro.props;
   <body class="bg-slate-50 dark:bg-slate-800">
     <slot />
     <script>
-      import '../load-gallery.js';
+      import "../load-gallery.js";
     </script>
   </body>
 </html>

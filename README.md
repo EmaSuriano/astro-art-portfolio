@@ -38,12 +38,9 @@
 
 * Duplicate the following [notion page](https://www.notion.so/emasuriano/dec82b99ec35407b830fa219863511be?v=54eba236190b4911b58cbdbb328244c1)
 * Replace the default values with your pictures and labels. The images are created based on: [label] [link].
-* Clone repository, and create an `.env` file at the root level and define the following variables:
-
-```plain
-NOTION_API_KEY=
-DATABASE_ID=
-```
+* Clone repository, 
+* Install dependencies by running: `yarn install`
+* Rename the file called `.env.example` to `.env` file and fill all the values.
 * You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
 
 ## Automate deploy of website 🚀 (Optional)
