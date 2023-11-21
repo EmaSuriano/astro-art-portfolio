@@ -14,7 +14,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - run: yarn install --frozen-lockfile
-      - run: yarn add --save-dev @percy/cli
+      - run: yarn add @percy/cli -D
 
       - run: yarn build
         env:
