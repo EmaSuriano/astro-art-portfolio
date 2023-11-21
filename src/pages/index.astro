@@ -1,10 +1,10 @@
 ---
-import { Img } from 'astro-imagetools/components';
-import probe from 'probe-image-size';
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
-import { PERSONAL_INFO } from '../consts';
-import { getNotionItems } from '../utils';
+import { Img } from "astro-imagetools/components";
+import probe from "probe-image-size";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import { PERSONAL_INFO } from "../consts";
+import { getNotionItems } from "../utils";
 
 const notionItems = await getNotionItems({
   auth: import.meta.env.NOTION_API_KEY,
@@ -12,7 +12,7 @@ const notionItems = await getNotionItems({
 
 const images = await Promise.all(
   notionItems.map(async ({ plain_text }) => {
-    const index = plain_text.lastIndexOf(' ');
+    const index = plain_text.lastIndexOf(" ");
     const label = plain_text.substring(0, index);
     const href = plain_text.substring(index + 1);
     const size = await probe(href);
@@ -23,26 +23,26 @@ const images = await Promise.all(
 ---
 
 <Layout title={PERSONAL_INFO.title}>
-  <div class="py-4 sm:py-6 lg:py-8 flex flex-col justify-between h-screen">
+  <div class="flex h-screen flex-col justify-between py-4 sm:py-6 lg:py-8">
     <main class="mb-auto">
       <div class="my-8 sm:my-12">
         <h2
-          class="text-gray-800 dark:text-white text-2xl md:text-3xl lg:text-4xl text-center mb-4 md:mb-6 font-semibold"
+          class="mb-4 text-center text-2xl font-semibold text-gray-800 dark:text-white md:mb-6 md:text-3xl lg:text-4xl"
         >
           {PERSONAL_INFO.title}
         </h2>
 
         <p
-          class="max-w-screen-md dark:text-slate-400 text-gray-500 md:text-lg text-center mx-auto"
+          class="mx-auto max-w-screen-md text-center text-gray-500 dark:text-slate-400 md:text-lg"
         >
           {PERSONAL_INFO.subtitle}
         </p>
       </div>
 
-      <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+      <div class="mx-auto max-w-screen-xl px-4 md:px-8">
         <div
           id="my-gallery"
-          class="pswp-gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 xl:gap-8 gallery"
+          class="pswp-gallery gallery grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:gap-8"
         >
           {
             images.map((image) => (
@@ -51,9 +51,9 @@ const images = await Promise.all(
                 data-cropped="true"
                 data-pswp-width={image.size.width}
                 data-pswp-height={image.size.height}
-                class="group h-72 md:h-96 flex justify-end items-end bg-gray-100 overflow-hidden rounded-xl shadow-lg relative gallery-item hover:shadow-xl"
+                class="gallery-item group relative flex h-72 items-end justify-end overflow-hidden rounded-xl bg-gray-100 shadow-lg hover:shadow-xl md:h-96"
               >
-                <div class="w-full h-full flex object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200 text-transparent">
+                <div class="absolute inset-0 flex h-full w-full object-cover object-center text-transparent transition duration-200 group-hover:scale-110">
                   <Img
                     src={image.href}
                     alt={image.label}
@@ -62,9 +62,9 @@ const images = await Promise.all(
                   />
                 </div>
 
-                <div class="bg-gradient-to-t from-black via-transparent to-transparent opacity-20 absolute inset-0 pointer-events-none group-hover:opacity-0 transition duration-200" />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-20 transition duration-200 group-hover:opacity-0" />
 
-                <span class="inline-block text-gray-200 text-xs md:text-sm border border-gray-500 rounded-lg backdrop-blur relative px-2 md:px-3 py-1 mr-3 mb-3 group-hover:opacity-0 transition duration-200">
+                <span class="relative mb-3 mr-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur transition duration-200 group-hover:opacity-0 md:px-3 md:text-sm">
                   {image.label}
                 </span>
               </a>
