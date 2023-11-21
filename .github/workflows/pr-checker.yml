@@ -21,6 +21,6 @@ jobs:
           NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
           DATABASE_ID: ${{secrets.DATABASE_ID}}
 
-      - run: npx percy snapshot public/ 
+      - run: npx percy snapshot dist/ 
         env:
           PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
