@@ -34,20 +34,23 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn add @percy/cli -D
 
+      - run: mkdir -p theme-dist/light
+        
+
       - run: yarn build:light
         env:
           NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
           DATABASE_ID: ${{secrets.DATABASE_ID}}
 
-      - run: npx percy snapshot dist/ 
-        env:
-          PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
+      - run: cp -R dist theme-dist/light
       
       - run: yarn build:dark
         env:
           NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
           DATABASE_ID: ${{secrets.DATABASE_ID}}
 
-      - run: npx percy snapshot dist/ 
+      - run: cp -R dist theme-dist/dark
+
+      - run: npx percy snapshot theme-dist/ 
         env:
           PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
