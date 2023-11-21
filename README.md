@@ -44,6 +44,28 @@
 * Rename the file called `.env.example` to `.env` file and fill all the values.
 * You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
 
+## Force theme colors
+
+I added a mechanism to force the theme of the website, in case you don't like the default behavior of [Dark Mode in Tailwind](https://tailwindcss.com/docs/dark-mode). Simply modify your deployment script in order to use:
+
+<details>
+  <summary>To force light theme </summary>
+  
+  ```
+  build:light
+  ```
+
+</details>
+
+<details>
+  <summary>To force dark theme </summary>
+  
+  ```
+  build:dark
+  ```
+
+</details>
+
 ## Automate deploy of website 🚀 (Optional)
 
 Given that this project is a static website, you are force to trigger a deploy in order to reflect the latest changes inside our Notion database. This process can be easily automatized using many of the existing providers out there. 

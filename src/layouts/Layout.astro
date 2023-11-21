@@ -3,11 +3,13 @@ import { SEO_INFO } from "../consts";
 
 type Props = { title: string };
 
+const forceTheme = import.meta.env.FORCE_THEME || "";
+
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class={forceTheme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

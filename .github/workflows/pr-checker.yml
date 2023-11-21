@@ -21,6 +21,33 @@ jobs:
           NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
           DATABASE_ID: ${{secrets.DATABASE_ID}}
 
+  visual-testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn add @percy/cli -D
+
+      - run: yarn build:light
+        env:
+          NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
+          DATABASE_ID: ${{secrets.DATABASE_ID}}
+
+      - run: npx percy snapshot dist/ 
+        env:
+          PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
+      
+      - run: yarn build:dark
+        env:
+          NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
+          DATABASE_ID: ${{secrets.DATABASE_ID}}
+
       - run: npx percy snapshot dist/ 
         env:
           PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
