@@ -6,7 +6,7 @@
 
 > Art portfolio built with Astro and using Notion API.
 
-## [Demo ✨](https://art.emasuriano.com/)
+## [Demo ✨](https://astro-art-portfolio.netlify.app)
 
 ## Screenshots 📸
 
