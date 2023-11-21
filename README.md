@@ -3,7 +3,7 @@
 [![Main](https://github.com/EmaSuriano/astro-art-portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/EmaSuriano/astro-art-portfolio/actions/workflows/main.yml)
 ![Dependabot Status](https://badgen.net/github/dependabot/EmaSuriano/astro-art-portfolio)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8d66fa66-0596-4ae2-97ef-bef6134b2681/deploy-status)](https://app.netlify.com/sites/astro-art-portfolio/deploys)
-[![Percy](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Ema-suriano/astro-art)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Ema-suriano/astro-art)
 
 > Art portfolio built with Astro and using Notion API.
 
