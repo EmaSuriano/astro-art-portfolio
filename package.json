@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "prebuild": "astro check",
+    "build": "astro build",
+    "build:light": "FORCE_THEME=light yarn build",
+    "build:dark": "FORCE_THEME=dark yarn build",
     "preview": "astro preview"
   },
   "devDependencies": {
