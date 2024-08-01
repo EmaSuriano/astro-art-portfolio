@@ -17,7 +17,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@notionhq/client": "^2.2.14",
     "@types/probe-image-size": "^7.2.4",
-    "astro-compress": "^2.2.3",
+    "astro-compress": "^2.3.0",
     "astro-icon": "^0.8.1",
     "astro-imagetools": "^0.9.0",
     "photoswipe": "^5.4.3",
