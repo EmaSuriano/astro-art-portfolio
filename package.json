@@ -18,7 +18,7 @@
     "@notionhq/client": "^2.2.14",
     "@types/probe-image-size": "^7.2.4",
     "astro-compress": "^2.2.3",
-    "astro-icon": "^0.8.1",
+    "astro-icon": "^1.1.4",
     "astro-imagetools": "^0.9.0",
     "photoswipe": "^5.4.3",
     "prettier": "^3.2.4",
