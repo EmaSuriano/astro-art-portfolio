@@ -33,5 +33,9 @@
   },
   "overrides": {
     "sharp": "^0.33.0"
+  },
+  "resolutions": {
+    "astro/sharp": "0.33.1",
+    "astro-compress/sharp": "0.33.1"
   }
 }
