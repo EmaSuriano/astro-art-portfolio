@@ -12,7 +12,6 @@ const notionItems = await getNotionItems({
 
 const images = await Promise.all(
   notionItems.reverse().map(async ({ label, href }) => {
-    console.log(label, href);
     const size = await probe(href);
 
     return { label, href, size };
