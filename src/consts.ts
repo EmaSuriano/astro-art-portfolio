@@ -1,50 +1,46 @@
 export const ROUTES = [
-  {
-    href: '/',
-    label: 'Art',
-  },
-  {
-    href: '/about',
-    label: 'About',
-  },
+  { href: "/", label: "Art" },
+  { href: "/about", label: "About" },
 ] as const;
 
 // Icons from https://icon-sets.iconify.design
 export const SOCIAL = [
   {
-    label: 'Twitter',
-    href: 'https://twitter.com/EmaSuriano',
-    icon: 'mdi:twitter',
+    label: "Twitter",
+    href: "https://twitter.com/EmaSuriano",
+    icon: "mdi:twitter",
   },
   {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/emanuel-suriano/',
-    icon: 'mdi:linkedin',
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/emanuel-suriano/",
+    icon: "mdi:linkedin",
   },
   {
-    label: 'Website',
-    href: 'https://emasuriano.com',
-    icon: 'mdi:web',
+    label: "Website",
+    href: "https://emasuriano.com",
+    icon: "mdi:web",
   },
 ] as const;
 
 export const PERSONAL_INFO = {
-  name: 'Astro Art',
-  title: "Astro Art",
-  subtitle: 'A collection of my best work in one place',
-  role: 'Digital Artist',
-  contact: 'mailto:astro.example@gmail.com',
+  name: "Astro Art",
+  title: "Galactic Canvas 🌌",
+  subtitle: "Where the Universe Meets Digital Art",
+  role: "Cosmic Digital Artist",
+  contact: "mailto:galactic.canvas@example.com",
   avatar:
-    'https://cdn.discordapp.com/attachments/1023544104698773564/1049350422290251847/Ema_portrait_of_a_young_man_with_background_of_snow_mountains_i_f1762cd5-f4f3-4107-839c-194dab4dffa7.png',
-  about:
-    'Welcome to Astro Art, fusing art and tech with Astro.js for a seamless digital experience. Explore curated masterpieces effortlessly, welcoming the future of art appreciation.',
+    "https://github.com/user-attachments/assets/a543b428-3c52-421d-a5d5-32bcd97b1e6e",
+  about: `Step into Galactic Canvas, a realm where the cosmos and creativity collide.
+    Using the power of Astro.js, we bring you an interstellar collection of digital art
+    that transcends the ordinary. Embark on a journey through our curated gallery
+    and experience the future of art in the digital age.`,
 } as const;
 
 export const SEO_INFO = [
   {
-    name: 'description',
-    content: 'Art portfolio made by Ema Suriano in his free time',
+    name: "description",
+    content: "Art portfolio made by Ema Suriano in his free time",
   },
-  { name: 'keywords', content: 'Art portfolio, Digital art, gallery' },
-  { name: 'author', content: PERSONAL_INFO.name },
+  { name: "keywords", content: "Art portfolio, Digital art, gallery" },
+  { name: "author", content: PERSONAL_INFO.name },
 ];

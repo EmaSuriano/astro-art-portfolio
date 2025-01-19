@@ -1,10 +1,12 @@
 name: ci
 
-on: 
+on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches:
-      - master
-      - main
+    branches: [main]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
 
 jobs:
   build:
@@ -14,7 +16,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
 
       - run: yarn install --frozen-lockfile
 

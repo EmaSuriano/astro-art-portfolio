@@ -1,8 +1,11 @@
-import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
-import { Client } from '@notionhq/client';
-import type { ClientOptions } from '@notionhq/client/build/src/Client';
+import { Client } from "@notionhq/client";
+import type { ClientOptions } from "@notionhq/client/build/src/Client";
 
-export const getNotionItems = async (options: ClientOptions) => {
+type NotionItem = { label: string; href: string };
+
+export const getNotionItems = async (
+  options: ClientOptions,
+): Promise<NotionItem[]> => {
   const notion = new Client(options);
 
   const response = await notion.databases.query({
@@ -11,13 +14,16 @@ export const getNotionItems = async (options: ClientOptions) => {
 
   return response.results
     .map((page) => {
-      if ('properties' in page) {
+      if ("properties" in page) {
         const title = page.properties.Title;
-        if (title && 'type' in title && title.type === 'title') {
-          return title.title[0];
+        if (title && "type" in title && title.type === "title") {
+          return {
+            label: title.title.at(0)?.plain_text,
+            href: title.title.at(1)?.plain_text,
+          };
         }
       }
       return false;
     })
-    .filter((title): title is RichTextItemResponse => !!title);
+    .filter((item): item is NotionItem => !!item);
 };
