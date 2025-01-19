@@ -8,7 +8,6 @@
     "start": "astro dev",
     "prebuild": "astro check",
     "build": "astro build",
-    "postbuild": "npx @divriots/jampack ./dist",
     "build:light": "FORCE_THEME=light yarn build",
     "build:dark": "FORCE_THEME=dark yarn build",
     "preview": "astro preview"
