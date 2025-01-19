@@ -1,8 +1,8 @@
 ---
-import { Img } from "astro-imagetools/components";
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import { PERSONAL_INFO } from "../consts";
+import { Img } from 'astro-imagetools/components';
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { PERSONAL_INFO } from '../consts';
 
 const { role, name, avatar, contact, about } = PERSONAL_INFO;
 
@@ -14,14 +14,14 @@ const title = `${name} - About`;
     <main class="mb-auto flex flex-col items-center align-middle">
       <div class="my-8 sm:my-12">
         <h2
-          class="mb-4 text-center text-2xl font-semibold text-gray-800 dark:text-white md:mb-6 lg:text-3xl"
+          class="mb-4 text-center text-2xl font-semibold text-gray-800 md:mb-6 lg:text-3xl dark:text-white"
         >
           About me
         </h2>
       </div>
 
       <div
-        class="mx-4 w-fit rounded-xl bg-white py-4 dark:bg-slate-900 sm:py-8"
+        class="mx-4 w-fit rounded-xl bg-white py-4 sm:py-8 dark:bg-slate-900"
       >
         <div class="max-w-screen-lg px-4 md:px-8">
           <div class="grid items-center gap-8 sm:grid-cols-2">
@@ -34,7 +34,7 @@ const title = `${name} - About`;
                 {role}
               </p>
               <h1
-                class="mb-4 text-center text-2xl font-bold text-gray-800 dark:text-gray-200 sm:text-left md:text-3xl"
+                class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-left md:text-3xl dark:text-gray-200"
               >
                 {name}
               </h1>
@@ -53,7 +53,13 @@ const title = `${name} - About`;
             <div
               class="relative mx-auto h-fit max-w-xs overflow-hidden rounded-full bg-gray-100 object-cover object-center shadow-lg sm:max-w-md"
             >
-              <Img src={avatar} alt="Portrait" width={600} format="webp" />
+              <Img
+                src={avatar}
+                alt="Portrait"
+                height={600}
+                width={600}
+                format="webp"
+              />
             </div>
           </div>
         </div>

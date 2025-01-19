@@ -11,11 +11,11 @@
 
 ## Screenshots 📸
 
-| Description | Light                                                                                                                    | Dark                                                                                                                    |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| Home        | ![Home - Light](https://user-images.githubusercontent.com/3399429/196646889-8e5a7d23-75d5-4978-8767-0364f1cf0ca5.png)    | ![Home - Dark](https://user-images.githubusercontent.com/3399429/196646947-ca228872-1fac-40f8-9b57-f9b7a22f8f31.png)    |
-| Gallery     | ![Gallery - Light](https://user-images.githubusercontent.com/3399429/196646908-bb5fc6f4-c72f-4532-bd39-5b0bc5b04a94.png) | ![Gallery - Dark](https://user-images.githubusercontent.com/3399429/196648558-41226bcd-6594-49dc-8d29-c998352cdf86.png) |
-| About       | ![About - Light](https://user-images.githubusercontent.com/3399429/196646936-f8087693-6254-4515-b7da-828f4ad0674d.png)   | ![About - Dark](https://user-images.githubusercontent.com/3399429/196646862-41bd7f63-758e-47f7-8bcb-23b2e5678496.png)   |
+| Light                                                                                               | Dark                                                                                               |
+| --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| ![Home - Light](ttps://github.com/user-attachments/assets/8e8afd1b-4beb-45ed-80be-26c5d34c6d23)     | ![Home - Dark](https://github.com/user-attachments/assets/447c76a3-8908-43f8-820e-62326e0367bf)    |
+| ![Gallery - Light](https://github.com/user-attachments/assets/bb0da25d-e7bd-42af-b9ff-4c141ee2072f) | ![Gallery - Dark](https://github.com/user-attachments/assets/8137836b-c427-4929-a23b-a5a685114a26) |
+| ![About - Light](https://github.com/user-attachments/assets/e3ba85d0-651d-4cd8-a49e-f2c3fd489265)   | ![About - Dark](https://github.com/user-attachments/assets/b1d33ea0-bac6-48db-af84-e2f8e904f2d7)   |
 
 ## Features 🚀
 
@@ -37,12 +37,12 @@
 
 ## Setup 📦
 
-* Duplicate the following [notion page](https://www.notion.so/emasuriano/dec82b99ec35407b830fa219863511be?v=54eba236190b4911b58cbdbb328244c1)
-* Replace the default values with your pictures and labels. The images are created based on: [label] [link].
-* Clone repository, 
-* Install dependencies by running: `yarn install`
-* Rename the file called `.env.example` to `.env` file and fill all the values.
-* You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
+- Duplicate the following [notion page](https://www.notion.so/emasuriano/dec82b99ec35407b830fa219863511be?v=54eba236190b4911b58cbdbb328244c1)
+- Replace the default values with your pictures and labels. The images are created based on: [label] [link].
+- Clone repository,
+- Install dependencies by running: `yarn install`
+- Rename the file called `.env.example` to `.env` file and fill all the values.
+- You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
 
 ## Force theme colors
 
@@ -68,7 +68,7 @@ I added a mechanism to force the theme of the website, in case you don't like th
 
 ## Automate deploy of website 🚀 (Optional)
 
-Given that this project is a static website, you are force to trigger a deploy in order to reflect the latest changes inside our Notion database. This process can be easily automatized using many of the existing providers out there. 
+Given that this project is a static website, you are force to trigger a deploy in order to reflect the latest changes inside our Notion database. This process can be easily automatized using many of the existing providers out there.
 
 In my case, I'm currently using [Zapier](https://zapier.com/) due to it provides compability with many services, and in this case with the ones that I need: [Notion](https://zapier.com/apps/notion/integrations) and [Netlify](https://zapier.com/apps/netlify/integrations). I created a [shared zap](https://zapier.com/shared/43559f7a74ff7d4aacb4befe8aa20f5acb88c628) that anyone can start using now!
 

@@ -1,20 +1,18 @@
 ---
-import { Img } from "astro-imagetools/components";
-import probe from "probe-image-size";
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import { PERSONAL_INFO } from "../consts";
-import { getNotionItems } from "../utils";
+import { Img } from 'astro-imagetools/components';
+import probe from 'probe-image-size';
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { PERSONAL_INFO } from '../consts';
+import { getNotionItems } from '../utils';
 
 const notionItems = await getNotionItems({
   auth: import.meta.env.NOTION_API_KEY,
 });
 
 const images = await Promise.all(
-  notionItems.map(async ({ plain_text }) => {
-    const index = plain_text.lastIndexOf(" ");
-    const label = plain_text.substring(0, index);
-    const href = plain_text.substring(index + 1);
+  notionItems.reverse().map(async ({ label, href }) => {
+    console.log(label, href);
     const size = await probe(href);
 
     return { label, href, size };
@@ -27,13 +25,13 @@ const images = await Promise.all(
     <main class="mb-auto">
       <div class="my-8 sm:my-12">
         <h2
-          class="mb-4 text-center text-2xl font-semibold text-gray-800 dark:text-white md:mb-6 md:text-3xl lg:text-4xl"
+          class="mb-4 text-center text-2xl font-semibold text-gray-800 md:mb-6 md:text-3xl lg:text-4xl dark:text-white"
         >
           {PERSONAL_INFO.title}
         </h2>
 
         <p
-          class="mx-auto max-w-screen-md text-center text-gray-500 dark:text-slate-400 md:text-lg"
+          class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg dark:text-slate-400"
         >
           {PERSONAL_INFO.subtitle}
         </p>
