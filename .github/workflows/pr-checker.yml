@@ -11,10 +11,11 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
 
       - run: yarn install --frozen-lockfile
-      - run: yarn add @percy/cli -D
+
+      - run: yarn astro check
 
       - run: yarn build
         env:
@@ -29,9 +30,10 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
 
       - run: yarn install --frozen-lockfile
+
       - run: yarn add @percy/cli -D
 
       - run: mkdir -p theme-dist/light && mkdir -p theme-dist/dark
@@ -42,7 +44,7 @@ jobs:
           DATABASE_ID: ${{secrets.DATABASE_ID}}
 
       - run: cp -R dist/* theme-dist/light
-      
+
       - run: yarn build:dark --base dark
         env:
           NOTION_API_KEY: ${{secrets.NOTION_API_KEY}}
@@ -50,6 +52,6 @@ jobs:
 
       - run: cp -R dist/* theme-dist/dark
 
-      - run: npx percy snapshot theme-dist/ 
+      - run: npx percy snapshot theme-dist/
         env:
           PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
