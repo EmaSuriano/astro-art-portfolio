@@ -25,15 +25,7 @@
 - Github workflow + Dependabot setup
 - Typescript out of the box
 - Gallery powered by [`photoswipe`](https://photoswipe.com/)
-- File compression with [`astro-compress`](https://github.com/astro-community/astro-compress)
-- 💯 Lighthouse score
 - Icon supports with [`astro-icon`](https://github.com/natemoo-re/astro-icon)
-
-## Lighthouse report 💯
-
-| Mobile                                                                                                                            | Desktop                                                                                                                            |
-| --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| ![Lighthouse mobile report](https://user-images.githubusercontent.com/3399429/205282617-84fd40b0-473e-4cb5-aec7-ae94f2fc7c51.png) | ![Lighthouse desktop report](https://user-images.githubusercontent.com/3399429/205282635-b9198cd3-2253-421c-8207-3473436f8689.png) |
 
 ## Setup 📦
 
