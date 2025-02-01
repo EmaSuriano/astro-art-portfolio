@@ -22,7 +22,7 @@
     "photoswipe": "^5.4.4",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.10",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "probe-image-size": "^7.2.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
