@@ -28,7 +28,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "@iconify-json/mdi": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.3",
     "astro": "^5.1.7"
   },
   "overrides": {
