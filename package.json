@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "astro": "^5.1.7"
+    "astro": "^5.2.3"
   },
   "overrides": {
     "sharp": "^0.33.0"
