@@ -64,13 +64,13 @@
     vscode-html-languageservice "^5.2.0"
     vscode-uri "^3.0.8"
 
-"@astrojs/markdown-remark@6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-6.3.1.tgz#3261c934959d779df77d30424ef78b9d6abb4b80"
-  integrity sha512-c5F5gGrkczUaTVgmMW9g1YMJGzOtRvjjhw6IfGuxarM6ct09MpwysP10US729dy07gg8y+ofVifezvP3BNsWZg==
+"@astrojs/markdown-remark@6.3.2":
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-6.3.2.tgz#b85bab36bc92bd9426e75f2efcbdfde26fad57d8"
+  integrity sha512-bO35JbWpVvyKRl7cmSJD822e8YA8ThR/YbUsciWNA7yTcqpIAL2hJDToWP5KcZBWxGT6IOdOkHSXARSNZc4l/Q==
   dependencies:
     "@astrojs/internal-helpers" "0.6.1"
-    "@astrojs/prism" "3.2.0"
+    "@astrojs/prism" "3.3.0"
     github-slugger "^2.0.0"
     hast-util-from-html "^2.0.3"
     hast-util-to-text "^4.0.2"
@@ -81,9 +81,9 @@
     rehype-stringify "^10.0.1"
     remark-gfm "^4.0.1"
     remark-parse "^11.0.0"
-    remark-rehype "^11.1.1"
+    remark-rehype "^11.1.2"
     remark-smartypants "^3.0.2"
-    shiki "^3.0.0"
+    shiki "^3.2.1"
     smol-toml "^1.3.1"
     unified "^11.0.5"
     unist-util-remove-position "^5.0.0"
@@ -91,12 +91,12 @@
     unist-util-visit-parents "^6.0.1"
     vfile "^6.0.3"
 
-"@astrojs/prism@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/prism/-/prism-3.2.0.tgz#e8ad1698395bd05f8d1177b365a8de899655c912"
-  integrity sha512-GilTHKGCW6HMq7y3BUv9Ac7GMe/MO9gi9GW62GzKtth0SwukCu/qp2wLiGpEujhY+VVhaG9v7kv/5vFzvf4NYw==
+"@astrojs/prism@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/prism/-/prism-3.3.0.tgz#5888fcd5665d416450a4fe55b1b7b701b8d586d9"
+  integrity sha512-q8VwfU/fDZNoDOf+r7jUnMC2//H2l0TuQ6FkGJL8vD8nw/q5KiL3DS1KKBI3QhI9UQhpJ5dc7AtqfbXWuOgLCQ==
   dependencies:
-    prismjs "^1.29.0"
+    prismjs "^1.30.0"
 
 "@astrojs/tailwind@^6.0.2":
   version "6.0.2"
@@ -107,10 +107,10 @@
     postcss "^8.5.3"
     postcss-load-config "^4.0.2"
 
-"@astrojs/telemetry@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-3.2.1.tgz#296668300100d0e4efe0c6c3cf247c0307d525f0"
-  integrity sha512-SSVM820Jqc6wjsn7qYfV9qfeQvePtVc1nSofhyap7l0/iakUKywj3hfy3UJAOV4sGV4Q/u450RD4AaCaFvNPlg==
+"@astrojs/telemetry@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-3.3.0.tgz#397dc1f3ab123470571d80c9b4c1335195d30417"
+  integrity sha512-UFBgfeldP06qu6khs/yY+q1cDAaArM2/7AEIqQ9Cuvf7B1hNLq0xDrZkct+QoIGyjq56y8IaE2I3CTvG99mlhQ==
   dependencies:
     ci-info "^4.2.0"
     debug "^4.4.0"
@@ -1075,6 +1075,13 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.6.tgz#628effeeae2064a1b4e79f78e81d87b7e5fc7b50"
   integrity sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==
 
+"@types/fontkit@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@types/fontkit/-/fontkit-2.0.8.tgz#59725be650e68acbbff6df9f3fccbd54d9ef7f4c"
+  integrity sha512-wN+8bYxIpJf+5oZdrdtaX04qUuWHcKxcDEgRS9Qm9ZClSHjzEn13SxUC+5eRM+4yXIeTYk8mTzLAWGF64847ew==
+  dependencies:
+    "@types/node" "*"
+
 "@types/hast@^3.0.0", "@types/hast@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@types/hast/-/hast-3.0.4.tgz#1d6b39993b82cea6ad783945b0508c25903e15aa"
@@ -1339,15 +1346,15 @@ astro-imagetools@^0.9.0:
   optionalDependencies:
     imagetools-core "3.0.2"
 
-astro@^5.7.10:
-  version "5.7.10"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-5.7.10.tgz#c144d3401dc1377272a5b98832e8ea5a63c6e906"
-  integrity sha512-9TQcFZqP2w6//JXXUHfw8/5PX7KUx9EkG5O3m+hISuyeUztvjY1q5+p7+C5HiXyg24Zs3KkpieoL5BGRXGCAGA==
+astro@^5.8.1:
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-5.8.1.tgz#4945dfc4da4aeed4932ee1b119ab1aeaabc627ce"
+  integrity sha512-lkBg1smMRFW+FQ6i92SgEN53o4+ItRjlRt6Ck+rEjmTcb57Bid7faTNKUQNYuNnxiesTWw3NJDyVPQPbfKDyfw==
   dependencies:
     "@astrojs/compiler" "^2.11.0"
     "@astrojs/internal-helpers" "0.6.1"
-    "@astrojs/markdown-remark" "6.3.1"
-    "@astrojs/telemetry" "3.2.1"
+    "@astrojs/markdown-remark" "6.3.2"
+    "@astrojs/telemetry" "3.3.0"
     "@capsizecss/unpack" "^2.4.0"
     "@oslojs/encoding" "^1.1.0"
     "@rollup/pluginutils" "^5.1.4"
@@ -1370,9 +1377,11 @@ astro@^5.7.10:
     esbuild "^0.25.0"
     estree-walker "^3.0.3"
     flattie "^1.1.1"
+    fontace "~0.3.0"
     github-slugger "^2.0.0"
     html-escaper "3.0.3"
     http-cache-semantics "^4.1.1"
+    import-meta-resolve "^4.1.0"
     js-yaml "^4.1.0"
     kleur "^4.1.5"
     magic-string "^0.30.17"
@@ -1391,7 +1400,7 @@ astro@^5.7.10:
     tinyglobby "^0.2.12"
     tsconfck "^3.1.5"
     ultrahtml "^1.6.0"
-    unifont "~0.4.1"
+    unifont "~0.5.0"
     unist-util-visit "^5.0.0"
     unstorage "^1.15.0"
     vfile "^6.0.3"
@@ -2233,7 +2242,15 @@ follow-redirects@^1.15.6:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.9.tgz#a604fa10e443bf98ca94228d9eebcc2e8a2c8ee1"
   integrity sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==
 
-fontkit@^2.0.2:
+fontace@~0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/fontace/-/fontace-0.3.0.tgz#ddc16ff039d07330a87c9492cf264f121ce3847b"
+  integrity sha512-czoqATrcnxgWb/nAkfyIrRp6Q8biYj7nGnL6zfhTcX+JKKpWHFBnb8uNMw/kZr7u++3Y3wYSYoZgHkCcsuBpBg==
+  dependencies:
+    "@types/fontkit" "^2.0.8"
+    fontkit "^2.0.4"
+
+fontkit@^2.0.2, fontkit@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/fontkit/-/fontkit-2.0.4.tgz#4765d664c68b49b5d6feb6bd1051ee49d8ec5ab0"
   integrity sha512-syetQadaUEDNdxdugga9CpEYVaQIxOwk7GlwZWWZ19//qW4zE5bknOKeMBDYAASwnpaSHKJITRLMF9m1fp3s6g==
@@ -3909,7 +3926,7 @@ prettier@^3.0.0, prettier@^3.5.3:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.5.3.tgz#4fc2ce0d657e7a02e602549f053b239cb7dfe1b5"
   integrity sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==
 
-prismjs@^1.29.0:
+prismjs@^1.30.0:
   version "1.30.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.30.0.tgz#d9709969d9d4e16403f6f348c63553b19f0975a9"
   integrity sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==
@@ -4102,10 +4119,10 @@ remark-parse@^11.0.0:
     micromark-util-types "^2.0.0"
     unified "^11.0.0"
 
-remark-rehype@^11.1.1:
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/remark-rehype/-/remark-rehype-11.1.1.tgz#f864dd2947889a11997c0a2667cd6b38f685bca7"
-  integrity sha512-g/osARvjkBXb6Wo0XvAeXQohVta8i84ACbenPpoSsxTOQH/Ae0/RGP4WZgnMH5pMLpsj4FG7OHmcIcXxpza8eQ==
+remark-rehype@^11.1.2:
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/remark-rehype/-/remark-rehype-11.1.2.tgz#2addaadda80ca9bd9aa0da763e74d16327683b37"
+  integrity sha512-Dh7l57ianaEoIpzbp0PC9UKAdCSVklD8E5Rpw7ETfbTl3FqcOOgq5q2LVDhgGCkaBv7p24JXikPdvhhmHvKMsw==
   dependencies:
     "@types/hast" "^3.0.0"
     "@types/mdast" "^4.0.0"
@@ -4336,7 +4353,7 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shiki@^3.0.0, shiki@^3.2.1:
+shiki@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/shiki/-/shiki-3.2.1.tgz#6b27ee9e7742e6c95f432031b78a8337e4be74ff"
   integrity sha512-VML/2o1/KGYkEf/stJJ+s9Ypn7jUKQPomGLGYso4JJFMFxVDyPNsjsI3MB3KLjlMOeH44gyaPdXC6rik2WXvUQ==
@@ -4757,10 +4774,10 @@ unified@^11.0.0, unified@^11.0.4, unified@^11.0.5:
     trough "^2.0.0"
     vfile "^6.0.0"
 
-unifont@~0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/unifont/-/unifont-0.4.1.tgz#b434984e11c8490929daa6a70c84c95d5459a004"
-  integrity sha512-zKSY9qO8svWYns+FGKjyVdLvpGPwqmsCjeJLN1xndMiqxHWBAhoWDMYMG960MxeV48clBmG+fDP59dHY1VoZvg==
+unifont@~0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/unifont/-/unifont-0.5.0.tgz#1c995b64cf6748468a5fa8431183f6bf10f23204"
+  integrity sha512-4DueXMP5Hy4n607sh+vJ+rajoLu778aU3GzqeTCqsD/EaUcvqZT9wPC8kgK6Vjh22ZskrxyRCR71FwNOaYn6jA==
   dependencies:
     css-tree "^3.0.0"
     ohash "^2.0.0"
