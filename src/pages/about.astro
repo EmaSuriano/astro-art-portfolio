@@ -1,5 +1,4 @@
 ---
-import { Img } from 'astro-imagetools/components';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import { PERSONAL_INFO } from '../consts';
@@ -53,12 +52,12 @@ const title = `${name} - About`;
             <div
               class="relative mx-auto h-fit max-w-xs overflow-hidden rounded-full bg-gray-100 object-cover object-center shadow-lg sm:max-w-md"
             >
-              <Img
+              <img
                 src={avatar}
                 alt="Portrait"
-                height={600}
-                width={600}
-                format="webp"
+                height="600"
+                width="600"
+                class="h-full w-full object-cover object-center"
               />
             </div>
           </div>

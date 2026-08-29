@@ -14,29 +14,22 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/tailwind": "^6.0.2",
     "@netlify/plugin-lighthouse": "^6.0.4",
     "@notionhq/client": "^2.3.0",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/probe-image-size": "^7.2.5",
     "astro-icon": "^1.2.0",
-    "astro-imagetools": "^0.9.0",
     "photoswipe": "^5.4.4",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "probe-image-size": "^7.4.0",
-    "tailwindcss": "^3.4.19",
-    "typescript": "^5.9.3"
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.0"
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "astro": "^5.18.2"
-  },
-  "overrides": {
-    "sharp": "^0.33.0"
-  },
-  "resolutions": {
-    "astro/sharp": "0.33.1",
-    "astro-compress/sharp": "0.33.1"
+    "astro": "^7.2.9"
   }
 }

@@ -5,7 +5,9 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8d66fa66-0596-4ae2-97ef-bef6134b2681/deploy-status)](https://app.netlify.com/sites/astro-art-portfolio/deploys)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Ema-suriano/astro-art)
 
-> Art portfolio built with Astro and using Notion API.
+> Art portfolio built with **Astro 7** and using Notion API. Astro 7 ready.
+
+Theme by [Ema Suriano](https://github.com/EmaSuriano). Demo content is fictional and generic.
 
 ## [Demo ✨](https://astro-art-portfolio.netlify.app)
 
@@ -19,7 +21,7 @@
 
 ## Features 🚀
 
-- [Astro](astro.build/)
+- [Astro 7](https://astro.build/)
 - [Notion API](https://developers.notion.com/)
 - [Tailwind CSS](https://tailwindcss.com/) with dark/light theme enabled
 - Github workflow + Dependabot setup
@@ -35,6 +37,7 @@
 - Install dependencies by running: `yarn install`
 - Rename the file called `.env.example` to `.env` file and fill all the values.
 - You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
+- The gallery uses sample artwork when Notion credentials are not set, so the project still builds.
 
 ## Force theme colors
 
@@ -73,7 +76,7 @@ All commands are run from the root of the project, from a terminal:
 | Command          | Action                                             |
 | :--------------- | :------------------------------------------------- |
 | `yarn`           | Installs dependencies                              |
-| `yarn dev`       | Starts local dev server at `localhost:3000`        |
+| `yarn dev`       | Starts local dev server at `localhost:4321`        |
 | `yarn build`     | Build your production site to `./dist/`            |
 | `yarn preview`   | Preview your build locally, before deploying       |
 | `yarn astro ...` | Run CLI commands like `astro add`, `astro preview` |
