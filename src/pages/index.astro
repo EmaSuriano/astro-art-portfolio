@@ -1,5 +1,4 @@
 ---
-import { Img } from 'astro-imagetools/components';
 import probe from 'probe-image-size';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
@@ -12,7 +11,10 @@ const notionItems = await getNotionItems({
 
 const images = await Promise.all(
   notionItems.reverse().map(async ({ label, href }) => {
-    const size = await probe(href);
+    const size = await probe(href).catch(() => ({
+      width: 800,
+      height: 1200,
+    }));
 
     return { label, href, size };
   }),
@@ -50,12 +52,14 @@ const images = await Promise.all(
                 data-pswp-height={image.size.height}
                 class="gallery-item group relative flex h-72 items-end justify-end overflow-hidden rounded-xl bg-gray-100 shadow-lg hover:shadow-xl md:h-96"
               >
-                <div class="absolute inset-0 flex h-full w-full object-cover object-center text-transparent transition duration-200 group-hover:scale-110">
-                  <Img
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                  <img
                     src={image.href}
                     alt={image.label}
-                    format="webp"
-                    width={image.size.width / 3}
+                    width={Math.round(image.size.width / 3)}
+                    height={Math.round(image.size.height / 3)}
+                    class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                    loading="lazy"
                   />
                 </div>
 

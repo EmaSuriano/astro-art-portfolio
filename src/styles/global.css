@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Class-based when html has .dark / .light (FORCE_THEME); otherwise follow OS. */
+@custom-variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not(.dark):not(.light) &) {
+      @slot;
+    }
+  }
+}
