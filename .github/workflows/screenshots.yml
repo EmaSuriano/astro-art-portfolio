@@ -16,22 +16,36 @@ permissions:
   contents: write
 
 jobs:
-  capture:
+  shot-scraper:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' || github.actor != 'github-actions[bot]' }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          node-version-file: '.nvmrc'
+          python-version: '3.13'
 
-      - name: Install Playwright
-        run: |
-          npm install -D playwright@1.55.0
-          npx playwright install --with-deps chromium
+      - name: Configure pip caching
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright/
+          key: ${{ runner.os }}-browsers
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: shot-scraper install
 
       - name: Wait for Netlify deploy
         env:
@@ -51,10 +65,8 @@ jobs:
           echo "site not ready"
           exit 1
 
-      - name: Capture screenshots
-        env:
-          SCREENSHOT_BASE_URL: https://astro-art-portfolio.netlify.app
-        run: node scripts/screenshots.mjs
+      - name: Take screenshots
+        run: shot-scraper multi shots.yml
 
       - name: Commit if changed
         run: |

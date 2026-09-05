@@ -12,13 +12,13 @@ Theme by [Ema Suriano](https://github.com/EmaSuriano). Demo content is fictional
 
 ## Screenshots 📸
 
-Captured automatically from the [live demo](https://astro-art-portfolio.netlify.app) by [`.github/workflows/screenshots.yml`](.github/workflows/screenshots.yml) (also `yarn screenshots` / `npm run screenshots`). Light and dark modes are both captured.
+Captured from the [live demo](https://astro-art-portfolio.netlify.app) with [shot-scraper](https://github.com/simonw/shot-scraper) via [`shots.yml`](shots.yml) (workflow: [`.github/workflows/screenshots.yml`](.github/workflows/screenshots.yml)). Light and dark for Home and About.
 
 | Light | Dark |
 | ----- | ---- |
 | ![Home - Light](screenshots/home-light.png) | ![Home - Dark](screenshots/home-dark.png) |
-| ![Gallery - Light](screenshots/gallery-light.png) | ![Gallery - Dark](screenshots/gallery-dark.png) |
 | ![About - Light](screenshots/about-light.png) | ![About - Dark](screenshots/about-dark.png) |
+
 
 ## Features 🚀
 
