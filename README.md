@@ -12,11 +12,13 @@ Theme by [Ema Suriano](https://github.com/EmaSuriano). Demo content is fictional
 
 ## Screenshots 📸
 
-| Light                                                                                               | Dark                                                                                               |
-| --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| ![Home - Light](https://github.com/user-attachments/assets/8e8afd1b-4beb-45ed-80be-26c5d34c6d23)     | ![Home - Dark](https://github.com/user-attachments/assets/447c76a3-8908-43f8-820e-62326e0367bf)    |
-| ![Gallery - Light](https://github.com/user-attachments/assets/bb0da25d-e7bd-42af-b9ff-4c141ee2072f) | ![Gallery - Dark](https://github.com/user-attachments/assets/8137836b-c427-4929-a23b-a5a685114a26) |
-| ![About - Light](https://github.com/user-attachments/assets/e3ba85d0-651d-4cd8-a49e-f2c3fd489265)   | ![About - Dark](https://github.com/user-attachments/assets/b1d33ea0-bac6-48db-af84-e2f8e904f2d7)   |
+Captured from the [live demo](https://astro-art-portfolio.netlify.app) with [shot-scraper](https://github.com/simonw/shot-scraper) via [`shots.yml`](shots.yml) (workflow: [`.github/workflows/screenshots.yml`](.github/workflows/screenshots.yml)). Light and dark for Home and About.
+
+| Light | Dark |
+| ----- | ---- |
+| ![Home - Light](screenshots/home-light.png) | ![Home - Dark](screenshots/home-dark.png) |
+| ![About - Light](screenshots/about-light.png) | ![About - Dark](screenshots/about-dark.png) |
+
 
 ## Features 🚀
 

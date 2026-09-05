@@ -1,0 +1,81 @@
+name: Screenshots
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'screenshots/**'
+      - 'README.md'
+
+concurrency:
+  group: screenshots
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  shot-scraper:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.actor != 'github-actions[bot]' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Configure pip caching
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright/
+          key: ${{ runner.os }}-browsers
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: shot-scraper install
+
+      - name: Wait for Netlify deploy
+        env:
+          BASE: https://astro-art-portfolio.netlify.app
+        run: |
+          set -e
+          for i in $(seq 1 24); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/")
+            if [ "$code" = "200" ]; then
+              echo "site up (attempt $i)"
+              sleep 20
+              exit 0
+            fi
+            echo "waiting ($i) status=$code"
+            sleep 15
+          done
+          echo "site not ready"
+          exit 1
+
+      - name: Take screenshots
+        run: shot-scraper multi shots.yml
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add screenshots/*.png
+          if git diff --cached --quiet; then
+            echo "No screenshot changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh README screenshots [skip ci]"
+          git push

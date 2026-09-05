@@ -1,0 +1,39 @@
+- url: https://astro-art-portfolio.netlify.app/
+  output: screenshots/home-light.png
+  width: 1440
+  height: 900
+  wait: 1000
+  javascript: |
+    localStorage.setItem('theme', 'light');
+    document.documentElement.classList.add('light');
+    document.documentElement.classList.remove('dark');
+
+- url: https://astro-art-portfolio.netlify.app/
+  output: screenshots/home-dark.png
+  width: 1440
+  height: 900
+  wait: 1000
+  javascript: |
+    localStorage.setItem('theme', 'dark');
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+
+- url: https://astro-art-portfolio.netlify.app/about
+  output: screenshots/about-light.png
+  width: 1440
+  height: 900
+  wait: 1000
+  javascript: |
+    localStorage.setItem('theme', 'light');
+    document.documentElement.classList.add('light');
+    document.documentElement.classList.remove('dark');
+
+- url: https://astro-art-portfolio.netlify.app/about
+  output: screenshots/about-dark.png
+  width: 1440
+  height: 900
+  wait: 1000
+  javascript: |
+    localStorage.setItem('theme', 'dark');
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
