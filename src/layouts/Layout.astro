@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import { SEO_INFO } from '../consts';
 import { ClientRouter } from 'astro:transitions';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 type Props = { title: string };
@@ -24,10 +23,7 @@ const { title } = Astro.props;
     <ClientRouter />
   </head>
   <body class="bg-slate-50 dark:bg-slate-800">
-    <div
-      class="flex min-h-screen flex-col py-4 sm:py-6 lg:py-8"
-    >
-      <Header />
+    <div class="flex min-h-screen flex-col py-4 sm:py-6 lg:py-8">
       <main class="mb-auto flex-1">
         <slot />
       </main>
