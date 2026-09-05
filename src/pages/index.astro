@@ -10,7 +10,7 @@ const notionItems = await getNotionItems({
 });
 
 /** Max CSS width of a masonry column on a large screen (~screen/4). */
-const THUMB_WIDTHS = [360, 720];
+const THUMB_WIDTHS = [360, 720] as const;
 const THUMB_SIZES = '(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw';
 
 const images = await Promise.all(
@@ -20,13 +20,17 @@ const images = await Promise.all(
       height: 1200,
     }));
 
-    // Grid only needs a small derivative; PhotoSwipe still uses `href` (full file).
+    // Pass explicit dimensions from probe — GitHub user-attachments fail Astro's inferSize fetch.
+    const widths = THUMB_WIDTHS.filter((w) => w <= size.width);
+    const maxWidth = widths.at(-1) ?? Math.min(THUMB_WIDTHS[0], size.width);
+
     const thumb = await getImage({
       src: href,
-      widths: THUMB_WIDTHS,
+      width: size.width,
+      height: size.height,
+      widths: widths.length > 0 ? [...widths] : [maxWidth],
       sizes: THUMB_SIZES,
       format: 'webp',
-      inferSize: true,
     });
 
     return { label, href, size, thumb };
