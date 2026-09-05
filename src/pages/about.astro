@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
 import { PERSONAL_INFO } from '../consts';
 
 const { role, name, avatar, contact, about } = PERSONAL_INFO;
@@ -9,62 +8,58 @@ const title = `${name} - About`;
 ---
 
 <Layout title={title}>
-  <div class="flex h-screen flex-col justify-between py-4 sm:py-6 lg:py-8">
-    <main class="mb-auto flex flex-col items-center align-middle">
-      <div class="my-8 sm:my-12">
-        <h2
-          class="mb-4 text-center text-2xl font-semibold text-gray-800 md:mb-6 lg:text-3xl dark:text-white"
-        >
-          About me
-        </h2>
-      </div>
-
-      <div
-        class="mx-4 w-fit rounded-xl bg-white py-4 sm:py-8 dark:bg-slate-900"
+  <div class="flex flex-col items-center align-middle">
+    <div class="my-8 sm:my-12">
+      <h2
+        class="mb-4 text-center text-2xl font-semibold text-gray-800 md:mb-6 lg:text-3xl dark:text-white"
       >
-        <div class="max-w-screen-lg px-4 md:px-8">
-          <div class="grid items-center gap-8 sm:grid-cols-2">
-            <div
-              class="flex flex-col items-center justify-center py-8 sm:items-start sm:py-24"
+        About me
+      </h2>
+    </div>
+
+    <div
+      class="mx-4 w-fit rounded-xl bg-white py-4 sm:py-8 dark:bg-slate-900"
+    >
+      <div class="max-w-screen-lg px-4 md:px-8">
+        <div class="grid items-center gap-8 sm:grid-cols-2">
+          <div
+            class="flex flex-col items-center justify-center py-8 sm:items-start sm:py-24"
+          >
+            <p
+              class="mb-4 text-sm font-semibold uppercase text-indigo-500 md:text-base"
             >
-              <p
-                class="mb-4 text-sm font-semibold uppercase text-indigo-500 md:text-base"
-              >
-                {role}
-              </p>
-              <h1
-                class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-left md:text-3xl dark:text-gray-200"
-              >
-                {name}
-              </h1>
-
-              <p class="mb-8 text-center text-gray-500 sm:text-left md:text-lg">
-                {about}
-              </p>
-
-              <a
-                href={contact}
-                class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-                >Contact</a
-              >
-            </div>
-
-            <div
-              class="relative mx-auto h-fit max-w-xs overflow-hidden rounded-full bg-gray-100 object-cover object-center shadow-lg sm:max-w-md"
+              {role}
+            </p>
+            <h1
+              class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-left md:text-3xl dark:text-gray-200"
             >
-              <img
-                src={avatar}
-                alt="Portrait"
-                height="600"
-                width="600"
-                class="h-full w-full object-cover object-center"
-              />
-            </div>
+              {name}
+            </h1>
+
+            <p class="mb-8 text-center text-gray-500 sm:text-left md:text-lg">
+              {about}
+            </p>
+
+            <a
+              href={contact}
+              class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+              >Contact</a
+            >
+          </div>
+
+          <div
+            class="relative mx-auto h-fit max-w-xs overflow-hidden rounded-full bg-gray-100 object-cover object-center shadow-lg sm:max-w-md"
+          >
+            <img
+              src={avatar}
+              alt="Portrait"
+              height="600"
+              width="600"
+              class="h-full w-full object-cover object-center"
+            />
           </div>
         </div>
       </div>
-    </main>
-
-    <Footer />
+    </div>
   </div>
 </Layout>
