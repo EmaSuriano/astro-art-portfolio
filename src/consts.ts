@@ -4,42 +4,47 @@ export const ROUTES = [
 ] as const;
 
 // Icons from https://icon-sets.iconify.design
+// Demo social destinations for the theme preview persona (Alex Rivera).
 export const SOCIAL = [
   {
-    label: "Twitter",
-    href: "https://twitter.com",
-    icon: "mdi:twitter",
+    label: "Instagram",
+    href: "https://www.instagram.com/alexrivera.studio",
+    icon: "mdi:instagram",
   },
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com",
-    icon: "mdi:linkedin",
+    label: "Behance",
+    href: "https://www.behance.net/alexrivera",
+    icon: "mdi:behance",
   },
   {
     label: "Website",
-    href: "https://example.com",
+    href: "https://alexrivera.studio",
     icon: "mdi:web",
   },
 ] as const;
 
 export const PERSONAL_INFO = {
   name: "Alex Rivera",
-  title: "Digital Art Portfolio",
-  subtitle: "A showcase of original digital artwork",
-  role: "Digital Artist",
-  contact: "mailto:hello@example.com",
+  title: "Alex Rivera",
+  subtitle: "Digital illustration and mixed-media studies",
+  role: "Digital artist",
+  contact: "mailto:studio@alexrivera.studio",
   avatar:
-    "https://api.dicebear.com/9.x/lorelei/svg?seed=AlexRivera",
-  about: `A digital artist exploring color, texture, and form through illustration and mixed media.
-    This portfolio is a sample gallery for the Astro Art theme — swap these details for your own
-    name, bio, and work when you use the theme.`,
+    "https://api.dicebear.com/9.x/lorelei/svg?seed=AlexRiveraStudio&backgroundColor=b6e3f4,c0aede,d1d4f9",
+  about: `I make digital illustrations and mixed-media pieces that sit somewhere between quiet still lifes and saturated dreamscapes.
+    Most of the work starts as charcoal or ink, then moves into color studies on screen — texture, light, and a little narrative tension.
+    This gallery collects recent prints and commissions; for availability and collabs, reach out at studio@alexrivera.studio.`,
 } as const;
 
 export const SEO_INFO = [
   {
     name: "description",
-    content: "A digital art portfolio theme built with Astro",
+    content:
+      "Digital art portfolio of Alex Rivera — illustration, mixed media, and color studies.",
   },
-  { name: "keywords", content: "Art portfolio, Digital art, gallery" },
+  {
+    name: "keywords",
+    content: "Alex Rivera, digital art, illustration, mixed media, art portfolio",
+  },
   { name: "author", content: PERSONAL_INFO.name },
 ];
