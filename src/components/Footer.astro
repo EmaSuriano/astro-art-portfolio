@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components';
 const year = new Date().getFullYear();
 ---
 
-<footer>
+<footer transition:persist="site-footer">
   <div class="mb-4 mt-12 flex flex-col items-center gap-4">
     <div class="flex gap-4">
       {
