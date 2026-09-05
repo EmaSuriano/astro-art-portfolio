@@ -38,32 +38,34 @@ const images = await Promise.all(
   <div class="mx-auto max-w-screen-xl px-4 md:px-8">
     <div
       id="my-gallery"
-      class="pswp-gallery gallery grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:gap-8"
+      class="pswp-gallery gallery columns-2 gap-4 sm:columns-3 md:gap-6 lg:columns-4 xl:gap-8"
     >
       {
-        images.map((image) => (
+        images.map((image, index) => (
           <a
             href={image.href}
-            data-cropped="true"
+            data-cropped="false"
             data-pswp-width={image.size.width}
             data-pswp-height={image.size.height}
-            class="gallery-item group relative flex h-72 items-end justify-end overflow-hidden rounded-xl bg-gray-100 shadow-lg hover:shadow-xl md:h-96"
+            class="gallery-item group mb-4 inline-block w-full break-inside-avoid overflow-hidden rounded-xl bg-gray-100 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500 md:mb-6 dark:bg-slate-900"
           >
-            <div class="absolute inset-0 h-full w-full overflow-hidden">
+            <span class="relative block">
               <img
                 src={image.href}
                 alt={image.label}
-                width={Math.round(image.size.width / 3)}
-                height={Math.round(image.size.height / 3)}
-                class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-                loading="lazy"
+                width={image.size.width}
+                height={image.size.height}
+                class="block h-auto w-full"
+                loading={index < 4 ? 'eager' : 'lazy'}
+                fetchpriority={index < 2 ? 'high' : undefined}
+                decoding="async"
               />
-            </div>
 
-            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-20 transition duration-200 group-hover:opacity-0" />
-
-            <span class="relative mb-3 mr-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur transition duration-200 group-hover:opacity-0 md:px-3 md:text-sm">
-              {image.label}
+              <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent px-3 pb-3 pt-10">
+                <span class="inline-block rounded-lg border border-gray-200/40 px-2 py-1 text-xs text-gray-100 backdrop-blur-sm md:px-3 md:text-sm">
+                  {image.label}
+                </span>
+              </span>
             </span>
           </a>
         ))
