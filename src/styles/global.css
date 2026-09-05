@@ -1,3 +1,11 @@
+/* Hallmark · follow-up tokens for astro-art-portfolio
+ * Genre: editorial · Theme voice: Atelier/Studio (gallery)
+ * Pairing: Instrument Serif (display) + Geist (body)
+ * Accent: warm clay — stays out of the artwork’s way (~3% of viewport)
+ * Load fonts: Instrument Serif + Geist (Google) with font-display: swap
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap");
 @import "tailwindcss";
 
 /* Class-based when html has .dark / .light (FORCE_THEME); otherwise follow OS. */
@@ -10,4 +18,106 @@
       @slot;
     }
   }
+}
+
+@theme {
+  --font-display: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  /* major-third scale from 16px */
+  --text-xs: 0.64rem;
+  --text-sm: 0.8rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.9531rem;
+  --text-2xl: 2.4414rem;
+  --text-3xl: 3.0518rem;
+  --text-display: clamp(2.25rem, 3vw + 1rem, 3.5rem);
+
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-med: 200ms;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  /* Light — warm oat paper, clay accent (hue ~48) */
+  --color-paper: oklch(96.5% 0.012 78);
+  --color-paper-2: oklch(93.5% 0.014 78);
+  --color-rule: oklch(84% 0.012 70);
+  --color-muted: oklch(45% 0.018 55);
+  --color-ink: oklch(22% 0.018 55);
+  --color-accent: oklch(58% 0.14 48);
+  --color-focus: oklch(55% 0.16 48);
+  --color-on-accent: oklch(97% 0.01 78);
+}
+
+/* Dark — same hue, lifted surfaces, softer accent chroma */
+.dark {
+  --color-paper: oklch(16% 0.014 55);
+  --color-paper-2: oklch(20% 0.016 55);
+  --color-rule: oklch(32% 0.014 55);
+  --color-muted: oklch(72% 0.02 70);
+  --color-ink: oklch(94% 0.01 78);
+  --color-accent: oklch(72% 0.12 48);
+  --color-focus: oklch(74% 0.13 48);
+  --color-on-accent: oklch(18% 0.02 55);
+}
+
+/* Prefer OS dark when no explicit .dark/.light class (matches @custom-variant). */
+@media (prefers-color-scheme: dark) {
+  :root:not(.dark):not(.light) {
+    --color-paper: oklch(16% 0.014 55);
+    --color-paper-2: oklch(20% 0.016 55);
+    --color-rule: oklch(32% 0.014 55);
+    --color-muted: oklch(72% 0.02 70);
+    --color-ink: oklch(94% 0.01 78);
+    --color-accent: oklch(72% 0.12 48);
+    --color-focus: oklch(74% 0.13 48);
+    --color-on-accent: oklch(18% 0.02 55);
+  }
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal; /* Hallmark: no italic headers */
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+a:focus-visible,
+button:focus-visible,
+.gallery-item:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
