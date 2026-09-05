@@ -7,10 +7,11 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [icon()],
   image: {
-    // Notion / demo gallery assets are remote URLs; authorize hosts for build-time thumbs.
+    // Notion gallery URLs start on github.com / Unsplash, then redirect to CDN hosts.
     remotePatterns: [
       { protocol: "https", hostname: "github.com" },
       { protocol: "https", hostname: "**.githubusercontent.com" },
+      { protocol: "https", hostname: "**.s3.amazonaws.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "**.unsplash.com" },
     ],
