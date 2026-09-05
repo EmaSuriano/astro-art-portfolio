@@ -1,7 +1,6 @@
 ---
 import probe from 'probe-image-size';
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
 import { PERSONAL_INFO } from '../consts';
 import { getNotionItems } from '../utils';
 
@@ -22,59 +21,53 @@ const images = await Promise.all(
 ---
 
 <Layout title={PERSONAL_INFO.title}>
-  <div class="flex h-screen flex-col justify-between py-4 sm:py-6 lg:py-8">
-    <main class="mb-auto">
-      <div class="my-8 sm:my-12">
-        <h2
-          class="mb-4 text-center text-2xl font-semibold text-gray-800 md:mb-6 md:text-3xl lg:text-4xl dark:text-white"
-        >
-          {PERSONAL_INFO.title}
-        </h2>
+  <div class="my-8 sm:my-12">
+    <h2
+      class="mb-4 text-center text-2xl font-semibold text-gray-800 md:mb-6 md:text-3xl lg:text-4xl dark:text-white"
+    >
+      {PERSONAL_INFO.title}
+    </h2>
 
-        <p
-          class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg dark:text-slate-400"
-        >
-          {PERSONAL_INFO.subtitle}
-        </p>
-      </div>
+    <p
+      class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg dark:text-slate-400"
+    >
+      {PERSONAL_INFO.subtitle}
+    </p>
+  </div>
 
-      <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div
-          id="my-gallery"
-          class="pswp-gallery gallery grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:gap-8"
-        >
-          {
-            images.map((image) => (
-              <a
-                href={image.href}
-                data-cropped="true"
-                data-pswp-width={image.size.width}
-                data-pswp-height={image.size.height}
-                class="gallery-item group relative flex h-72 items-end justify-end overflow-hidden rounded-xl bg-gray-100 shadow-lg hover:shadow-xl md:h-96"
-              >
-                <div class="absolute inset-0 h-full w-full overflow-hidden">
-                  <img
-                    src={image.href}
-                    alt={image.label}
-                    width={Math.round(image.size.width / 3)}
-                    height={Math.round(image.size.height / 3)}
-                    class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                </div>
+  <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+    <div
+      id="my-gallery"
+      class="pswp-gallery gallery grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:gap-8"
+    >
+      {
+        images.map((image) => (
+          <a
+            href={image.href}
+            data-cropped="true"
+            data-pswp-width={image.size.width}
+            data-pswp-height={image.size.height}
+            class="gallery-item group relative flex h-72 items-end justify-end overflow-hidden rounded-xl bg-gray-100 shadow-lg hover:shadow-xl md:h-96"
+          >
+            <div class="absolute inset-0 h-full w-full overflow-hidden">
+              <img
+                src={image.href}
+                alt={image.label}
+                width={Math.round(image.size.width / 3)}
+                height={Math.round(image.size.height / 3)}
+                class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                loading="lazy"
+              />
+            </div>
 
-                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-20 transition duration-200 group-hover:opacity-0" />
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-20 transition duration-200 group-hover:opacity-0" />
 
-                <span class="relative mb-3 mr-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur transition duration-200 group-hover:opacity-0 md:px-3 md:text-sm">
-                  {image.label}
-                </span>
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </main>
-
-    <Footer />
+            <span class="relative mb-3 mr-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur transition duration-200 group-hover:opacity-0 md:px-3 md:text-sm">
+              {image.label}
+            </span>
+          </a>
+        ))
+      }
+    </div>
   </div>
 </Layout>
