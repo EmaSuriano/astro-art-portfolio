@@ -1,0 +1,31 @@
+---
+import { ROUTES, PERSONAL_INFO } from '../consts';
+---
+
+<header
+  class="border-b border-gray-200/80 dark:border-slate-700/80"
+  transition:persist="site-header"
+>
+  <div
+    class="mx-auto flex max-w-screen-xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8"
+  >
+    <a
+      href="/"
+      class="text-sm font-semibold text-gray-800 transition-colors hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
+    >
+      {PERSONAL_INFO.name}
+    </a>
+    <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 md:gap-6">
+      {
+        ROUTES.map((route) => (
+          <a
+            href={route.href}
+            class="text-sm text-gray-500 transition-colors hover:text-gray-600 active:text-gray-600 dark:hover:text-gray-400 dark:active:text-gray-400"
+          >
+            {route.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
