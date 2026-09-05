@@ -10,7 +10,8 @@
     "build": "astro build",
     "build:light": "FORCE_THEME=light yarn build",
     "build:dark": "FORCE_THEME=dark yarn build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "screenshots": "node scripts/screenshots.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
@@ -20,6 +21,7 @@
     "@types/probe-image-size": "^7.2.5",
     "astro-icon": "^1.2.0",
     "photoswipe": "^5.4.4",
+    "playwright": "1.55.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",

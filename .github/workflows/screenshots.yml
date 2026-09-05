@@ -1,0 +1,69 @@
+name: Screenshots
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'screenshots/**'
+      - 'README.md'
+
+concurrency:
+  group: screenshots
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.actor != 'github-actions[bot]' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install Playwright
+        run: |
+          npm install -D playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Wait for Netlify deploy
+        env:
+          BASE: https://astro-art-portfolio.netlify.app
+        run: |
+          set -e
+          for i in $(seq 1 24); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/")
+            if [ "$code" = "200" ]; then
+              echo "site up (attempt $i)"
+              sleep 20
+              exit 0
+            fi
+            echo "waiting ($i) status=$code"
+            sleep 15
+          done
+          echo "site not ready"
+          exit 1
+
+      - name: Capture screenshots
+        env:
+          SCREENSHOT_BASE_URL: https://astro-art-portfolio.netlify.app
+        run: node scripts/screenshots.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add screenshots/*.png
+          if git diff --cached --quiet; then
+            echo "No screenshot changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh README screenshots [skip ci]"
+          git push
