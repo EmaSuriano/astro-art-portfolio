@@ -4,7 +4,7 @@ export const ROUTES = [
 ] as const;
 
 // Icons from https://icon-sets.iconify.design
-// Demo social destinations for the theme preview persona (Alex Rivera).
+// Plausible fictional profiles for the theme-submission persona (Alex Rivera).
 export const SOCIAL = [
   {
     label: "Instagram",
@@ -26,21 +26,20 @@ export const SOCIAL = [
 export const PERSONAL_INFO = {
   name: "Alex Rivera",
   title: "Alex Rivera",
-  subtitle: "Digital illustration and mixed-media studies",
+  subtitle:
+    "Digital paintings and illustrations exploring color, light, and quiet worlds.",
   role: "Digital artist",
-  contact: "mailto:studio@alexrivera.studio",
-  avatar:
-    "https://api.dicebear.com/9.x/lorelei/svg?seed=AlexRiveraStudio&backgroundColor=b6e3f4,c0aede,d1d4f9",
-  about: `I make digital illustrations and mixed-media pieces that sit somewhere between quiet still lifes and saturated dreamscapes.
-    Most of the work starts as charcoal or ink, then moves into color studies on screen — texture, light, and a little narrative tension.
-    This gallery collects recent prints and commissions; for availability and collabs, reach out at studio@alexrivera.studio.`,
+  contact: "mailto:hello@alexrivera.art",
+  contactLabel: "Say hello",
+  avatar: "https://api.dicebear.com/9.x/lorelei/svg?seed=AlexRivera",
+  about: `Alex Rivera is a digital artist working in illustration and mixed media — layering texture, saturated color, and soft atmosphere into scenes that feel half-remembered. This gallery collects recent work spanning portraiture, landscape, and speculative worlds.`,
 } as const;
 
 export const SEO_INFO = [
   {
     name: "description",
     content:
-      "Digital art portfolio of Alex Rivera — illustration, mixed media, and color studies.",
+      "Digital art portfolio of Alex Rivera — illustration, mixed media, and quiet painted worlds.",
   },
   {
     name: "keywords",
