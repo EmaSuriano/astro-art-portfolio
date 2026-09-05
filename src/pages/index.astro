@@ -1,4 +1,5 @@
 ---
+import { getImage } from 'astro:assets';
 import probe from 'probe-image-size';
 import Layout from '../layouts/Layout.astro';
 import { PERSONAL_INFO } from '../consts';
@@ -8,6 +9,10 @@ const notionItems = await getNotionItems({
   auth: import.meta.env.NOTION_API_KEY,
 });
 
+/** Max CSS width of a masonry column on a large screen (~screen/4). */
+const THUMB_WIDTHS = [360, 720];
+const THUMB_SIZES = '(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw';
+
 const images = await Promise.all(
   notionItems.reverse().map(async ({ label, href }) => {
     const size = await probe(href).catch(() => ({
@@ -15,7 +20,16 @@ const images = await Promise.all(
       height: 1200,
     }));
 
-    return { label, href, size };
+    // Grid only needs a small derivative; PhotoSwipe still uses `href` (full file).
+    const thumb = await getImage({
+      src: href,
+      widths: THUMB_WIDTHS,
+      sizes: THUMB_SIZES,
+      format: 'webp',
+      inferSize: true,
+    });
+
+    return { label, href, size, thumb };
   }),
 );
 ---
@@ -51,10 +65,12 @@ const images = await Promise.all(
           >
             <span class="relative block">
               <img
-                src={image.href}
+                src={image.thumb.src}
+                srcset={image.thumb.srcSet.attribute}
+                sizes={THUMB_SIZES}
                 alt={image.label}
-                width={image.size.width}
-                height={image.size.height}
+                width={image.thumb.attributes.width}
+                height={image.thumb.attributes.height}
                 class="block h-auto w-full"
                 loading={index < 4 ? 'eager' : 'lazy'}
                 fetchpriority={index < 2 ? 'high' : undefined}
