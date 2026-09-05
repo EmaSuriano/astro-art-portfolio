@@ -22,14 +22,14 @@ const images = await Promise.all(
 
 <Layout title={PERSONAL_INFO.title}>
   <div class="my-8 sm:my-12">
-    <h2
-      class="mb-4 text-center text-2xl font-semibold text-gray-800 md:mb-6 md:text-3xl lg:text-4xl dark:text-white"
+    <h1
+      class="font-display mb-4 text-center text-display text-ink md:mb-6"
     >
-      {PERSONAL_INFO.title}
-    </h2>
+      {PERSONAL_INFO.name}
+    </h1>
 
     <p
-      class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg dark:text-slate-400"
+      class="mx-auto max-w-screen-md text-center text-muted md:text-lg"
     >
       {PERSONAL_INFO.subtitle}
     </p>
@@ -47,7 +47,7 @@ const images = await Promise.all(
             data-cropped="false"
             data-pswp-width={image.size.width}
             data-pswp-height={image.size.height}
-            class="gallery-item group mb-4 inline-block w-full break-inside-avoid overflow-hidden rounded-xl bg-gray-100 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500 md:mb-6 dark:bg-slate-900"
+            class="gallery-item group mb-4 inline-block w-full break-inside-avoid overflow-hidden rounded-xl bg-paper-2 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus md:mb-6"
           >
             <span class="relative block">
               <img
@@ -61,8 +61,8 @@ const images = await Promise.all(
                 decoding="async"
               />
 
-              <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent px-3 pb-3 pt-10">
-                <span class="inline-block rounded-lg border border-gray-200/40 px-2 py-1 text-xs text-gray-100 backdrop-blur-sm md:px-3 md:text-sm">
+              <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/55 via-ink/15 to-transparent px-3 pb-3 pt-10">
+                <span class="inline-block rounded-lg border border-rule/50 px-2 py-1 text-xs text-paper backdrop-blur-sm md:px-3 md:text-sm">
                   {image.label}
                 </span>
               </span>

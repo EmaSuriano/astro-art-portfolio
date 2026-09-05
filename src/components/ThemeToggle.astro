@@ -5,12 +5,12 @@
   id="theme-toggle"
   type="button"
   aria-label="Toggle dark mode"
-  class="rounded-full bg-gray-200 p-2 transition-colors duration-200 hover:bg-gray-300 dark:bg-slate-700 dark:hover:bg-slate-600"
+  class="flex size-10 items-center justify-center rounded-full bg-paper-2 text-ink transition-colors duration-200 hover:bg-rule/40"
 >
   <!-- Sun icon (shown in dark mode) -->
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="hidden h-5 w-5 text-gray-800 dark:block dark:text-slate-100"
+    class="hidden h-5 w-5 dark:block"
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
@@ -23,7 +23,7 @@
   <!-- Moon icon (shown in light mode) -->
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="block h-5 w-5 text-gray-800 dark:hidden dark:text-slate-100"
+    class="block h-5 w-5 dark:hidden"
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
@@ -46,7 +46,6 @@
     });
   }
 
-  // Footer uses transition:persist, so bind on page-load and once if already present.
   document.addEventListener('astro:page-load', setupThemeToggle);
   setupThemeToggle();
 

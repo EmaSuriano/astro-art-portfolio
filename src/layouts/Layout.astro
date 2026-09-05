@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { SEO_INFO } from '../consts';
 import { ClientRouter } from 'astro:transitions';
 import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 type Props = { title: string };
 
@@ -44,7 +45,14 @@ const { title } = Astro.props;
     </script>
     <ClientRouter />
   </head>
-  <body class="bg-slate-50 dark:bg-slate-800">
+  <body class="bg-paper text-ink">
+    <div
+      class="fixed top-4 right-4 z-20 sm:top-6 sm:right-6 lg:top-8 lg:right-8"
+      transition:persist="theme-toggle"
+    >
+      <ThemeToggle />
+    </div>
+
     <div class="flex min-h-screen flex-col py-4 sm:py-6 lg:py-8">
       <main class="mb-auto flex-1">
         <slot />
