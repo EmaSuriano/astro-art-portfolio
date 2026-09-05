@@ -1,4 +1,5 @@
 ---
+import { getImage } from 'astro:assets';
 import probe from 'probe-image-size';
 import Layout from '../layouts/Layout.astro';
 import { PERSONAL_INFO } from '../consts';
@@ -8,6 +9,10 @@ const notionItems = await getNotionItems({
   auth: import.meta.env.NOTION_API_KEY,
 });
 
+/** Max CSS width of a masonry column on a large screen (~screen/4). */
+const THUMB_WIDTHS = [360, 720] as const;
+const THUMB_SIZES = '(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw';
+
 const images = await Promise.all(
   notionItems.reverse().map(async ({ label, href }) => {
     const size = await probe(href).catch(() => ({
@@ -15,7 +20,31 @@ const images = await Promise.all(
       height: 1200,
     }));
 
-    return { label, href, size };
+    // Pass explicit dimensions from probe — GitHub user-attachments fail Astro's inferSize fetch.
+    const widths = THUMB_WIDTHS.filter((w) => w <= size.width);
+    const maxWidth = widths.at(-1) ?? Math.min(THUMB_WIDTHS[0], size.width);
+
+    let thumb: {
+      src: string;
+      srcSet: { attribute: string };
+      attributes: { width?: number; height?: number };
+    } | null = null;
+
+    try {
+      thumb = await getImage({
+        src: href,
+        width: size.width,
+        height: size.height,
+        widths: widths.length > 0 ? [...widths] : [maxWidth],
+        sizes: THUMB_SIZES,
+        format: 'webp',
+      });
+    } catch {
+      // Keep build green if a host/redirect still isn't allowlisted; lightbox uses `href`.
+      thumb = null;
+    }
+
+    return { label, href, size, thumb };
   }),
 );
 ---
@@ -50,16 +79,31 @@ const images = await Promise.all(
             class="gallery-item group mb-4 inline-block w-full break-inside-avoid overflow-hidden rounded-xl bg-paper-2 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus md:mb-6"
           >
             <span class="relative block">
-              <img
-                src={image.href}
-                alt={image.label}
-                width={image.size.width}
-                height={image.size.height}
-                class="block h-auto w-full"
-                loading={index < 4 ? 'eager' : 'lazy'}
-                fetchpriority={index < 2 ? 'high' : undefined}
-                decoding="async"
-              />
+              {image.thumb ? (
+                <img
+                  src={image.thumb.src}
+                  srcset={image.thumb.srcSet.attribute}
+                  sizes={THUMB_SIZES}
+                  alt={image.label}
+                  width={image.thumb.attributes.width}
+                  height={image.thumb.attributes.height}
+                  class="block h-auto w-full"
+                  loading={index < 4 ? 'eager' : 'lazy'}
+                  fetchpriority={index < 2 ? 'high' : undefined}
+                  decoding="async"
+                />
+              ) : (
+                <img
+                  src={image.href}
+                  alt={image.label}
+                  width={image.size.width}
+                  height={image.size.height}
+                  class="block h-auto w-full"
+                  loading={index < 4 ? 'eager' : 'lazy'}
+                  fetchpriority={index < 2 ? 'high' : undefined}
+                  decoding="async"
+                />
+              )}
 
               <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/55 via-ink/15 to-transparent px-3 pb-3 pt-10">
                 <span class="inline-block rounded-lg border border-rule/50 px-2 py-1 text-xs text-paper backdrop-blur-sm md:px-3 md:text-sm">
