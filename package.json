@@ -20,16 +20,16 @@
     "@types/probe-image-size": "^7.2.5",
     "astro-icon": "^1.2.0",
     "photoswipe": "^5.4.4",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.9",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "probe-image-size": "^7.4.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
-    "vite": "^8.0.0"
+    "vite": "^8.3.1"
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "astro": "^7.2.9"
+    "astro": "^7.3.5"
   }
 }
