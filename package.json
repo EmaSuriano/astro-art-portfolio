@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "astro": "^7.4.4"
+    "astro": "^7.4.7"
   }
 }
